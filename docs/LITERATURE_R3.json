@@ -60,6 +60,38 @@
       "source": "https://www.tensorflow.org/model_optimization/guide/quantization/training_comprehensive_guide",
       "evidence": "Official implementation reference, not a journal article",
       "use": "Fine-tune with QAT; custom QuantizeConfig is experimental and requires actual integer operator/parity/target checks"
+    },
+    {
+      "id": "J4",
+      "title": "LiteMamba-EMG: A Lightweight Mamba-based Framework for Robust sEMG-based Swallowing Activity Classification in Dysphagia Patients",
+      "authors": [
+        "Linlin Zhao",
+        "Yongxiang Zou",
+        "Xiuxiu Shi",
+        "Long Cheng"
+      ],
+      "journal": "Machine Intelligence Research",
+      "year": 2026,
+      "doi": "10.1007/s11633-026-1663-8",
+      "source": "https://www.mi-research.net/article/doi/10.1007/s11633-026-1663-8",
+      "evidence": "Publisher metadata and abstract inspected after R3 training; full methods/target hardware not verified",
+      "use": "Future hypothesis: self-supervised pretraining and channel interaction. Abstract reports 2.56M parameters, incompatible with a direct dense INT8 model below 100KB. No Mamba, pretraining, distillation or source performance reproduced"
+    },
+    {
+      "id": "J5",
+      "title": "Detection of Swallowing Events by Decision Tree Learning of Polyvinylidene Fluoride Film Signals",
+      "authors": [
+        "Koretsu Takai",
+        "Keisuke Kitano",
+        "Yukihiro Michiwaki",
+        "Takuya Hashimoto"
+      ],
+      "journal": "Advanced Biomedical Engineering",
+      "year": 2026,
+      "doi": "10.14326/abe.15.215",
+      "source": "https://www.jstage.jst.go.jp/article/abe/15/0/15_215/_article/-char/en",
+      "evidence": "Publisher abstract and PDF measurement/preprocessing sections inspected after R3 training; participant split not verified",
+      "use": "Plan PVDF domain-transfer and continuous-event evaluation separately from D4 clip classification. No human procedure or published sensor performance reproduced"
     }
   ]
 }

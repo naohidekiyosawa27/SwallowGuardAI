@@ -22,3 +22,9 @@ Review the draft PR and automated checks, reconcile missing specifications, reso
 ## Stacked research continuation
 
 Milestone 02 is prepared on feat/m0-quantization-abstention. The owner merged PR #1 during this research session; observed main is d666940924bd3e2e568c35170f2739d1f07c0453, with the same foundation tree 606542ed5e549c61ac96763e0dae967ae7221077. The research branch is based on that main commit and its draft PR targets main. No research PR merge is authorized or automated. New source contains only aggregate results and synthetic fixtures, not raw waveforms or model binaries.
+
+## Milestone 03 review
+
+Draft PR #3: https://github.com/naohidekiyosawa27/SwallowGuardAI/pull/3, branch `feat/m0-bounded-qat`, stacked on the still-open draft PR #2. Initial implementation commit `e45daf1f1f8020bbc42d44dd4648a179accfa3d8`. Its 122 remote source blobs matched local hashes. Python/host CI run `45470279058` passed with 76 tests passed and 3 optional tests skipped; local isolated QAT suite passed all 79. Target CI also passed: IDF 5.3.2, TFLM 1.3.1, ESP-NN 1.5.0 and ESP-NN compile flag found. Retained dependency lock and JSON evidence are in reports/. This confirms compilation only; physical invocation remains unmeasured. No default-branch merge is authorized.
+
+Selected trained model and synthetic replay package are delivered privately outside GitHub. Public metadata, source code and aggregate results only are present in the repository. `reports/MILESTONE_03.md` separates numerical acceptance from independent/hardware/clinical validation.

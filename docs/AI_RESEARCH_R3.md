@@ -35,3 +35,10 @@ Three candidates passed. Waveform PTQ failed because its input range covered onl
 3. Validate physical DSP and synchronization on mechanical phantoms. Microphone data does not establish PVDF transfer, and public data has no optical/respiratory branch.
 4. Obtain a new participant-disjoint confirmation set with verified rights and matching labels. Existing validation is development data; the old test is exposed regression data.
 5. M1 needs synchronized prototype data. M2 remains disabled until clinically adjudicated data, safety/ethics authorization and reference assessments exist.
+
+## Follow-up domain search after the R3 experiment
+
+These sources were found after training and did not guide or change the frozen four-candidate study.
+
+- Zhao et al., *Machine Intelligence Research* (2026), [LiteMamba-EMG](https://doi.org/10.1007/s11633-026-1663-8): publisher abstract describes channel-cooperative state-space modeling and self-supervised pretraining from hand sEMG. Full methods and latency hardware were not verified. Its reported 2.56 million parameters imply roughly 2.56 MB of dense INT8 weights before overhead, exceeding the 100 KB target. Treat pretraining/distillation as a future ablation hypothesis, not a deployable replacement or a proven gain for D4. No external weights or NinaPro archive were downloaded; M1 remains unchanged.
+- Takai et al., *Advanced Biomedical Engineering* (2026), [PVDF decision-tree event detection](https://doi.org/10.14326/abe.15.215): publisher abstract and PDF measurement/preprocessing sections were inspected. The work separates isolated-task classification from continuous eating-event detection. Its PVDF system digitizes at 10 kHz and studies components up to 3 kHz. SWALLOWGUARD's D4 M0 representation at 2 kHz cannot represent that upper band; do not copy its filters or infer microphone-to-PVDF equivalence. This supports a separate phantom transfer-function/bandwidth study and continuous annotation protocol. Participant split was not verified, so its metrics are not an independent cross-subject benchmark for SWALLOWGUARD. No human test is authorized by this review.

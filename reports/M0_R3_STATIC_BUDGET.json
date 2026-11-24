@@ -1,0 +1,75 @@
+{
+  "model_sha256": "ed486cdfc5a06578a444615a1bf7c0b3f2b745a424d149a21d5db2c3bdd1eeda",
+  "calculation": "logical multiply-accumulates from actual flatbuffer shapes, not measured cycles or ESP-NN work",
+  "operators": [
+    {
+      "operator": "RESHAPE",
+      "output_shape": [
+        1,
+        4000,
+        1,
+        3
+      ]
+    },
+    {
+      "operator": "CONV_2D",
+      "output_shape": [
+        1,
+        1998,
+        1,
+        8
+      ],
+      "multiply_accumulate_count": 239760
+    },
+    {
+      "operator": "CONV_2D",
+      "output_shape": [
+        1,
+        997,
+        1,
+        16
+      ],
+      "multiply_accumulate_count": 638080
+    },
+    {
+      "operator": "MEAN",
+      "output_shape": [
+        1,
+        16
+      ]
+    },
+    {
+      "operator": "FULLY_CONNECTED",
+      "output_shape": [
+        1,
+        16
+      ],
+      "multiply_accumulate_count": 256
+    },
+    {
+      "operator": "FULLY_CONNECTED",
+      "output_shape": [
+        1,
+        1
+      ],
+      "multiply_accumulate_count": 16
+    },
+    {
+      "operator": "LOGISTIC",
+      "output_shape": [
+        1,
+        1
+      ]
+    }
+  ],
+  "total_conv_and_dense_MACs_per_window": 878112,
+  "input_bytes": 12000,
+  "largest_single_int8_tensor_bytes": 39880,
+  "arena_bytes": null,
+  "latency_ms": null,
+  "hardware_measured": false,
+  "limitations": [
+    "Single-tensor size is not tensor arena size; allocator overhead, scratch, lifetime overlap, PSRAM placement and kernel optimizations are unmeasured",
+    "MAC count does not determine hardware latency or energy"
+  ]
+}
