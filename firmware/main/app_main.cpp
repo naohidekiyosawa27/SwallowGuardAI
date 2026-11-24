@@ -5,6 +5,7 @@
 #include "esp_timer.h"
 #include "simulated_hal.hpp"
 #include "quantization_guard.hpp"
+#include "sg_tflm_runner.hpp"
 #include <atomic>
 #include <cstdlib>
 
@@ -62,6 +63,10 @@ extern "C" void app_main() {
 #if !CONFIG_SWALLOWGUARD_SIMULATED
 #error "Live drivers are blocked pending datasheet, schematic and safety review"
 #endif
+    // Link the audited five-operator TFLM/ESP-NN path. No model/arena is loaded;
+    // real-device parity/latency tests require a reviewed bench setup.
+    static sg::ResearchTFLMRunner bench_inference;
+    if(bench_inference.ready()) std::abort();
     acquisition_queue=xQueueCreate(512,sizeof(sg::Sample));
     logging_queue=xQueueCreate(1024,sizeof(sg::Sample));
     if(!acquisition_queue || !logging_queue) std::abort();

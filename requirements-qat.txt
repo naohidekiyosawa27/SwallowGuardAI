@@ -1,0 +1,7 @@
+# Isolated research environment; do not install over the base NumPy 2.x env.
+tensorflow==2.18.1
+tf-keras==2.18.0
+tensorflow-model-optimization==0.8.0
+numpy==1.26.4
+scipy==1.15.3
+scikit-learn==1.6.1

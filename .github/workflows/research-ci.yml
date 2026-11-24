@@ -28,3 +28,30 @@ jobs:
           cd firmware
           idf.py set-target esp32s3
           idf.py build
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          import yaml
+          lock=yaml.safe_load(Path('dependencies.lock').read_text())
+          commands=Path('build/compile_commands.json').read_text()
+          dependencies=lock.get('dependencies',{})
+          evidence={
+              'target':'esp32s3',
+              'dependency_versions':{k:v.get('version') for k,v in dependencies.items()},
+              'esp_nn_compile_flag_found':'-DESP_NN' in commands,
+              'model_loaded':False,
+              'hardware_inference_executed':False,
+              'latency_ms':None,
+              'arena_used_bytes':None
+          }
+          assert any('esp-tflite-micro' in k for k in dependencies)
+          assert any('esp-nn' in k for k in dependencies)
+          Path('build/sg_build_evidence.json').write_text(json.dumps(evidence,indent=2)+'\n')
+          print(json.dumps(evidence,indent=2))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: esp32s3-build-evidence
+          path: |
+            firmware/dependencies.lock
+            firmware/build/sg_build_evidence.json
