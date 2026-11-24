@@ -1,0 +1,23 @@
+{
+  "dataset": "D4_v2",
+  "clips_checked": 4053,
+  "manifest_sha256": "4d3340e3b26266cd029e6e16320947823b45cfced7b786b9729dcf7539c70384",
+  "checks": [
+    "Shape, embedded rate, participant, session and activity match manifest",
+    "All values finite"
+  ],
+  "class_counts": {
+    "Fluid": 820,
+    "Saliva": 843,
+    "Solid": 821,
+    "ThroatClearing": 776,
+    "Cough": 793
+  },
+  "flatline_channels_at_std_1e-12": {},
+  "identical_waveform_duplicates": {
+    "within_subject": 3
+  },
+  "full_scale_clipping_assessed": false,
+  "raw_QC_reproduced": false,
+  "clinical_labels": false
+}

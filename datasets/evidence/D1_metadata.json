@@ -1,0 +1,22 @@
+{
+  "dataset_id": "D1",
+  "retrieved_at_utc": "2026-11-24T18:02:11.544993+00:00",
+  "api_url": "https://zenodo.org/api/records/4539695",
+  "doi": "10.5281/zenodo.4539695",
+  "license": {
+    "id": "cc-by-4.0"
+  },
+  "access": "open",
+  "files": [
+    {
+      "name": "labels.zip",
+      "bytes": 301884,
+      "md5": "md5:5af27a544839b404f359e3d72b5026e2"
+    },
+    {
+      "name": "signals.zip",
+      "bytes": 1406291807,
+      "md5": "md5:ea0e725848c6092f946b06198f293f0d"
+    }
+  ]
+}

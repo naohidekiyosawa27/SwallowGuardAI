@@ -1,0 +1,58 @@
+test_d2_documented_fixture (test_research.Adapters.test_d2_documented_fixture) ... ok
+test_d2_timebase_guard (test_research.Adapters.test_d2_timebase_guard) ... ok
+test_d4_synthetic_mat (test_research.Adapters.test_d4_synthetic_mat) ... ok
+test_registry_restriction (test_research.Adapters.test_registry_restriction) ... ok
+test_synthetic_grouped_training (test_research.BaselineIntegration.test_synthetic_grouped_training) ... ok
+test_invalid_hides_probability (test_research.Contracts.test_invalid_hides_probability) ... ok
+test_no_m2 (test_research.Contracts.test_no_m2) ... ok
+test_paired_allowed (test_research.Contracts.test_paired_allowed) ... ok
+test_probability_validation (test_research.Contracts.test_probability_validation) ... ok
+test_recording_valid (test_research.Contracts.test_recording_valid) ... ok
+test_unpaired_rejected (test_research.Contracts.test_unpaired_rejected) ... ok
+test_ambiguous_windows_skipped (test_research.DSP.test_ambiguous_windows_skipped) ... ok
+test_antialias_attenuation (test_research.DSP.test_antialias_attenuation) ... ok
+test_envelope_shape (test_research.DSP.test_envelope_shape) ... ok
+test_features (test_research.DSP.test_features) ... ok
+test_filter_attenuates_low_frequency (test_research.DSP.test_filter_attenuates_low_frequency) ... ok
+test_filter_rejects_nyquist (test_research.DSP.test_filter_rejects_nyquist) ... ok
+test_missing_rejected (test_research.DSP.test_missing_rejected) ... ok
+test_normalizer_no_refit_on_test (test_research.DSP.test_normalizer_no_refit_on_test) ... ok
+test_normalizer_train_only (test_research.DSP.test_normalizer_train_only) ... ok
+test_optical_calibration (test_research.DSP.test_optical_calibration) ... ok
+test_clipping (test_research.Quality.test_clipping) ... ok
+test_detached (test_research.Quality.test_detached) ... ok
+test_duplicate (test_research.Quality.test_duplicate) ... ok
+test_flatline (test_research.Quality.test_flatline) ... ok
+test_gap (test_research.Quality.test_gap) ... ok
+test_good (test_research.Quality.test_good) ... ok
+test_motion (test_research.Quality.test_motion) ... ok
+test_nan (test_research.Quality.test_nan) ... ok
+test_rate_drift (test_research.Quality.test_rate_drift) ... ok
+test_sequence_gap (test_research.Quality.test_sequence_gap) ... ok
+test_tracking_loss (test_research.Quality.test_tracking_loss) ... ok
+test_invalid_scale (test_research.Quantization.test_invalid_scale) ... ok
+test_model_parameter_count (test_research.Quantization.test_model_parameter_count) ... 2026-11-25 03:18:04.791404: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 03:18:04.844885: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+ok
+test_quantization_saturates (test_research.Quantization.test_quantization_saturates) ... ok
+test_runtime_quantization_in_range (test_research.Quantization.test_runtime_quantization_in_range) ... ok
+test_runtime_quantization_range_rejected (test_research.Quantization.test_runtime_quantization_range_rejected) ... ok
+test_cluster_ci (test_research.SplitsMetrics.test_cluster_ci) ... ok
+test_confusion_orientation (test_research.SplitsMetrics.test_confusion_orientation) ... ok
+test_disjoint_subjects_all_sessions (test_research.SplitsMetrics.test_disjoint_subjects_all_sessions) ... ok
+test_insufficient_subjects (test_research.SplitsMetrics.test_insufficient_subjects) ... ok
+test_leakage_rejected (test_research.SplitsMetrics.test_leakage_rejected) ... ok
+test_reproducible (test_research.SplitsMetrics.test_reproducible) ... ok
+test_single_subject_ci_unavailable (test_research.SplitsMetrics.test_single_subject_ci_unavailable) ... ok
+test_affine_clock (test_research.Timing.test_affine_clock) ... ok
+test_delay_compensation (test_research.Timing.test_delay_compensation) ... ok
+test_duplicate_trigger_rejected (test_research.Timing.test_duplicate_trigger_rejected) ... ok
+test_frame_mapping_origin (test_research.Timing.test_frame_mapping_origin) ... ok
+test_origin_required (test_research.Timing.test_origin_required) ... ok
+
+----------------------------------------------------------------------
+Ran 49 tests in 4.353s
+
+OK
+PASS: ring overflow/order, native simulated rates, missing/stale/sequence/nonfinite rejection, disabled clinical output

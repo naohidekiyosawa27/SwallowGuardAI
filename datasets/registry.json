@@ -1,0 +1,140 @@
+{
+  "verified_at_utc": "2026-11-24T18:02:11.544993+00:00",
+  "waveform_access_complete": false,
+  "datasets": [
+    {
+      "id": "D1",
+      "doi": "10.5281/zenodo.4539695",
+      "metadata_api": "https://zenodo.org/api/records/4539695",
+      "license": "cc-by-4.0",
+      "license_verified": true,
+      "access": "open",
+      "training_allowed": false,
+      "waveforms_downloaded": false,
+      "blockers": [
+        "Large signal download requires human approval",
+        "Real waveform schema and integrity not yet inspected"
+      ],
+      "artifact_sizes_bytes": [
+        301884,
+        1406291807
+      ],
+      "participants": 248,
+      "swallow_events": 3144,
+      "sampling_hz": 4000,
+      "channels": [
+        "microphone",
+        "AP_acceleration",
+        "SI_acceleration",
+        "ML_acceleration"
+      ],
+      "annotation": "VFSS frame onset/offset at 60 fps; frame origin unverified",
+      "subject_identifier_schema": null,
+      "clinical_labels_verified": false,
+      "class_distribution": null
+    },
+    {
+      "id": "D2",
+      "doi": "10.5522/04/24297766.v1",
+      "metadata_api": "https://api.figshare.com/v2/articles/24297766",
+      "license": "CC0",
+      "license_verified": true,
+      "access": "open",
+      "training_allowed": false,
+      "waveforms_downloaded": false,
+      "blockers": [
+        "Large signal download requires human approval",
+        "Real waveform schema and integrity not yet inspected"
+      ],
+      "artifact_sizes_bytes": [
+        1123928984
+      ],
+      "participants": 11,
+      "sessions_per_subject_protocol": 4,
+      "subject_identifier_schema": "P<participant>_S<session>",
+      "sampling_hz": {
+        "emg": 2000,
+        "other_channels": null
+      },
+      "format": "six-column CSV; waveform not inspected",
+      "labels": {
+        "0": "null",
+        "1": "preparation",
+        "2": "swallow reflex",
+        "3": "cough",
+        "4": "speech"
+      },
+      "clinical_labels_verified": false,
+      "class_distribution": null
+    },
+    {
+      "id": "D3",
+      "doi": "10.18742/28528115.v1",
+      "metadata_api": "https://api.figshare.com/v2/articles/28528115",
+      "license": "King\u2019s Internal Access Only",
+      "license_verified": true,
+      "access": "restricted_internal",
+      "training_allowed": false,
+      "waveforms_downloaded": false,
+      "blockers": [
+        "Internal-only licence, no files exposed; obtain rights before use"
+      ],
+      "artifact_sizes_bytes": [],
+      "participants": 11,
+      "sampling_hz": {
+        "emg": 2200,
+        "sound": 44100
+      },
+      "subject_identifier_schema": null,
+      "clinical_labels_verified": false,
+      "class_distribution": null
+    },
+    {
+      "id": "D4",
+      "doi": "10.18742/33952399.v2",
+      "metadata_api": "https://api.figshare.com/v2/articles/33952399",
+      "license": "CC BY",
+      "license_verified": true,
+      "access": "open",
+      "training_allowed": true,
+      "waveforms_downloaded": true,
+      "blockers": [],
+      "artifact_sizes_bytes": [
+        3178418098,
+        1019125088,
+        776844,
+        1509,
+        821,
+        1506737987,
+        805,
+        356578,
+        611,
+        546139,
+        1081,
+        1920,
+        803,
+        12213
+      ],
+      "participants": 38,
+      "sessions": 41,
+      "subject_identifier_schema": "HSD001-HSD038; repeated sessions grouped by participant",
+      "sampling_hz": 20000,
+      "format": "MAT data matrix 40001 x 3; all 4053 files inspected, metadata matched, finite signals",
+      "class_distribution": {
+        "Fluid": 820,
+        "Saliva": 843,
+        "Solid": 821,
+        "ThroatClearing": 776,
+        "Cough": 793
+      },
+      "processed_clips": 4053,
+      "full_recordings_reported": 2907,
+      "healthy_only": true,
+      "clinical_labels_verified": false,
+      "real_schema_verified": true,
+      "approved_download_bytes": 1506737987,
+      "archive_md5_verified": "cae6eb3013bcd7e3d1afe0278c6143fd",
+      "retained_clips_after_exact_deduplication": 4050
+    }
+  ]
+}

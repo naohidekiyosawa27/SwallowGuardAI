@@ -1,0 +1,10 @@
+{
+  "stage": "M0",
+  "window_seconds_assumption": 4,
+  "m1_candidate_inputs": {"optical": [800, 4], "pvdf": [8000, 1], "emg": [800, 1], "resp": [400, 1], "timing": [8]},
+  "m1_parameter_count_expected": 4137,
+  "model_bytes_target_exclusive": 100000,
+  "inference_latency_ms_target_exclusive": 100,
+  "targets_measured": false,
+  "clinical_m2_enabled": false
+}

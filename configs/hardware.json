@@ -1,0 +1,15 @@
+{
+  "revision": "beta03-unverified-pinout",
+  "board": "ESP32-S3 N16R8",
+  "mode": "RESEARCH MODE",
+  "source": "synthetic",
+  "pins": null,
+  "calibration_id": null,
+  "sensors": {
+    "optical": {"part": "PAA5163E1-QV22", "interface": "SPI", "target_hz": 200, "driver_verified": false},
+    "pvdf": {"part": "TE LDT0-028K", "interface": "AFE + ADC", "target_hz": 8000, "driver_verified": false},
+    "emg": {"part": "MyoWare 2.0 RAW", "interface": "AFE + ADC", "target_hz": 2000, "human_connection_enabled": false},
+    "resp": {"part": "Sensirion SDP31", "interface": "I2C", "target_hz": 100, "pressure_is_flow": false},
+    "imu": {"part": "Bosch BMI270", "interface": "SPI/I2C", "target_hz": 200, "role": "quality_gate"}
+  }
+}
