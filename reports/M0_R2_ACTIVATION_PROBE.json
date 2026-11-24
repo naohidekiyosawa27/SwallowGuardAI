@@ -1,0 +1,88 @@
+{
+  "scope": "previously exposed regression outlier; numerical diagnostic only",
+  "original_float_probability": 1.0,
+  "input_quantize_dequantize_float_probability": 0.9995908737182617,
+  "input_and_activation_clamped_float_probability": 0.055556632578372955,
+  "actual_int8_probability": 0.0546875,
+  "layers": [
+    {
+      "operator": "CONV_2D",
+      "range": [
+        0.0,
+        38.74443858861923
+      ],
+      "upper_endpoint_fraction": 0.01951951951951952,
+      "lower_endpoint_fraction": 0.5512387387387387
+    },
+    {
+      "operator": "CONV_2D",
+      "range": [
+        0.0,
+        62.1785981208086
+      ],
+      "upper_endpoint_fraction": 0.007397191574724173,
+      "lower_endpoint_fraction": 0.36547141424272817
+    },
+    {
+      "operator": "MEAN",
+      "range": [
+        0.0,
+        4.088335521519184
+      ],
+      "upper_endpoint_fraction": 0.3125,
+      "lower_endpoint_fraction": 0.0
+    },
+    {
+      "operator": "FULLY_CONNECTED",
+      "range": [
+        0.0,
+        7.728372048586607
+      ],
+      "upper_endpoint_fraction": 0.0625,
+      "lower_endpoint_fraction": 0.5
+    },
+    {
+      "operator": "FULLY_CONNECTED",
+      "range": [
+        -5.337347583845258,
+        2.621854953467846
+      ],
+      "upper_endpoint_fraction": 0.0,
+      "lower_endpoint_fraction": 0.0
+    },
+    {
+      "operator": "LOGISTIC",
+      "range": [
+        0.0,
+        0.99609375
+      ],
+      "upper_endpoint_fraction": 0.0,
+      "lower_endpoint_fraction": 0.0
+    }
+  ],
+  "counterfactual_intermediates": [
+    {
+      "layer": "signal_conv_a",
+      "float_max_before_clamping": 64.34886932373047,
+      "fraction_above_int8_range": 0.01951951951951952
+    },
+    {
+      "layer": "signal_conv_b",
+      "float_max_before_clamping": 91.48793029785156,
+      "fraction_above_int8_range": 0.0072091273821464396
+    },
+    {
+      "layer": "signal_pool",
+      "float_max_before_clamping": 14.224651336669922,
+      "fraction_above_int8_range": 0.3125
+    },
+    {
+      "layer": "dense",
+      "float_max_before_clamping": 14.334282875061035,
+      "fraction_above_int8_range": 0.0625
+    }
+  ],
+  "interpretation": "Input saturation alone does not explain discrepancy. Intermediate activation range clipping is a tested numerical mechanism; no physiological cause or clinical validity is inferred.",
+  "deploy_clipped_signals": false,
+  "clinical_claim": false
+}

@@ -1,0 +1,870 @@
+{
+  "mode": "RESEARCH MODE",
+  "dataset": "D4_v2",
+  "scope": "original 26 training participants only",
+  "participants": 26,
+  "windows": 2722,
+  "folds": 5,
+  "clinical_validation": false,
+  "feature_sha256": "864ae682269814ad7b037c256cd9563b16d0c727447521cc927ab1e3e6273674",
+  "results": {
+    "sound_only/logistic_regression": {
+      "folds": [
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 567,
+          "precision": 0.7547619047619047,
+          "recall": 0.9635258358662614,
+          "f1": 0.8464619492656876,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              135,
+              103
+            ],
+            [
+              12,
+              317
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 559,
+          "precision": 0.9220430107526881,
+          "recall": 0.9554317548746518,
+          "f1": 0.9384404924760602,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              171,
+              29
+            ],
+            [
+              16,
+              343
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 20,
+          "test_participants": 6,
+          "test_windows": 567,
+          "precision": 0.9166666666666666,
+          "recall": 0.8870967741935484,
+          "f1": 0.9016393442622951,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              165,
+              30
+            ],
+            [
+              42,
+              330
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 516,
+          "precision": 0.9690402476780186,
+          "recall": 0.9873817034700315,
+          "f1": 0.978125,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              189,
+              10
+            ],
+            [
+              4,
+              313
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 513,
+          "precision": 0.987220447284345,
+          "recall": 0.987220447284345,
+          "f1": 0.987220447284345,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              196,
+              4
+            ],
+            [
+              4,
+              309
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        }
+      ],
+      "pooled_oof": {
+        "precision": 0.901565995525727,
+        "recall": 0.9538461538461539,
+        "f1": 0.9269695227142035,
+        "confusion_matrix_true_rows_pred_columns": [
+          [
+            856,
+            176
+          ],
+          [
+            78,
+            1612
+          ]
+        ],
+        "class_order": [
+          "non_swallow_event",
+          "swallow_event"
+        ]
+      },
+      "subject_cluster_f1_ci": {
+        "low": 0.8902308706266914,
+        "high": 0.9606161385265124,
+        "method": "subject_cluster_percentile",
+        "iterations": 1000,
+        "seed": 2026
+      },
+      "fold_f1_min": 0.8464619492656876,
+      "fold_f1_max": 0.987220447284345
+    },
+    "sound_only/random_forest": {
+      "folds": [
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 567,
+          "precision": 0.7726161369193154,
+          "recall": 0.9604863221884499,
+          "f1": 0.8563685636856369,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              145,
+              93
+            ],
+            [
+              13,
+              316
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 559,
+          "precision": 0.9180327868852459,
+          "recall": 0.935933147632312,
+          "f1": 0.926896551724138,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              170,
+              30
+            ],
+            [
+              23,
+              336
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 20,
+          "test_participants": 6,
+          "test_windows": 567,
+          "precision": 0.9120879120879121,
+          "recall": 0.8924731182795699,
+          "f1": 0.9021739130434783,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              163,
+              32
+            ],
+            [
+              40,
+              332
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 516,
+          "precision": 0.9671052631578947,
+          "recall": 0.9274447949526814,
+          "f1": 0.9468599033816425,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              189,
+              10
+            ],
+            [
+              23,
+              294
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 513,
+          "precision": 0.9935064935064936,
+          "recall": 0.9776357827476039,
+          "f1": 0.9855072463768116,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              198,
+              2
+            ],
+            [
+              7,
+              306
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        }
+      ],
+      "pooled_oof": {
+        "precision": 0.9046259280411194,
+        "recall": 0.9372781065088758,
+        "f1": 0.9206625980819529,
+        "confusion_matrix_true_rows_pred_columns": [
+          [
+            865,
+            167
+          ],
+          [
+            106,
+            1584
+          ]
+        ],
+        "class_order": [
+          "non_swallow_event",
+          "swallow_event"
+        ]
+      },
+      "subject_cluster_f1_ci": {
+        "low": 0.8820387972283399,
+        "high": 0.9560753517634883,
+        "method": "subject_cluster_percentile",
+        "iterations": 1000,
+        "seed": 2026
+      },
+      "fold_f1_min": 0.8563685636856369,
+      "fold_f1_max": 0.9855072463768116
+    },
+    "emg_only/logistic_regression": {
+      "folds": [
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 567,
+          "precision": 0.8456973293768546,
+          "recall": 0.8662613981762918,
+          "f1": 0.8558558558558559,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              186,
+              52
+            ],
+            [
+              44,
+              285
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 559,
+          "precision": 0.9484126984126984,
+          "recall": 0.6657381615598886,
+          "f1": 0.7823240589198036,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              187,
+              13
+            ],
+            [
+              120,
+              239
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 20,
+          "test_participants": 6,
+          "test_windows": 567,
+          "precision": 0.963076923076923,
+          "recall": 0.8413978494623656,
+          "f1": 0.8981348637015782,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              183,
+              12
+            ],
+            [
+              59,
+              313
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 516,
+          "precision": 0.8763636363636363,
+          "recall": 0.7602523659305994,
+          "f1": 0.8141891891891891,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              165,
+              34
+            ],
+            [
+              76,
+              241
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 513,
+          "precision": 0.825,
+          "recall": 0.9488817891373802,
+          "f1": 0.8826151560178306,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              137,
+              63
+            ],
+            [
+              16,
+              297
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        }
+      ],
+      "pooled_oof": {
+        "precision": 0.8876694641704326,
+        "recall": 0.8136094674556213,
+        "f1": 0.8490274776165483,
+        "confusion_matrix_true_rows_pred_columns": [
+          [
+            858,
+            174
+          ],
+          [
+            315,
+            1375
+          ]
+        ],
+        "class_order": [
+          "non_swallow_event",
+          "swallow_event"
+        ]
+      },
+      "subject_cluster_f1_ci": {
+        "low": 0.8078602644147251,
+        "high": 0.8923620030867994,
+        "method": "subject_cluster_percentile",
+        "iterations": 1000,
+        "seed": 2026
+      },
+      "fold_f1_min": 0.7823240589198036,
+      "fold_f1_max": 0.8981348637015782
+    },
+    "emg_only/random_forest": {
+      "folds": [
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 567,
+          "precision": 0.8996865203761756,
+          "recall": 0.8723404255319149,
+          "f1": 0.8858024691358025,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              206,
+              32
+            ],
+            [
+              42,
+              287
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 559,
+          "precision": 0.8615384615384616,
+          "recall": 0.6239554317548747,
+          "f1": 0.7237479806138933,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              164,
+              36
+            ],
+            [
+              135,
+              224
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 20,
+          "test_participants": 6,
+          "test_windows": 567,
+          "precision": 0.8497409326424871,
+          "recall": 0.8817204301075269,
+          "f1": 0.8654353562005277,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              137,
+              58
+            ],
+            [
+              44,
+              328
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 516,
+          "precision": 0.9478672985781991,
+          "recall": 0.6309148264984227,
+          "f1": 0.7575757575757576,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              188,
+              11
+            ],
+            [
+              117,
+              200
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 513,
+          "precision": 0.8112676056338028,
+          "recall": 0.9201277955271565,
+          "f1": 0.8622754491017964,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              133,
+              67
+            ],
+            [
+              25,
+              288
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        }
+      ],
+      "pooled_oof": {
+        "precision": 0.8667537557152188,
+        "recall": 0.785207100591716,
+        "f1": 0.8239677118907172,
+        "confusion_matrix_true_rows_pred_columns": [
+          [
+            828,
+            204
+          ],
+          [
+            363,
+            1327
+          ]
+        ],
+        "class_order": [
+          "non_swallow_event",
+          "swallow_event"
+        ]
+      },
+      "subject_cluster_f1_ci": {
+        "low": 0.7523866318268717,
+        "high": 0.8813407855791554,
+        "method": "subject_cluster_percentile",
+        "iterations": 1000,
+        "seed": 2026
+      },
+      "fold_f1_min": 0.7237479806138933,
+      "fold_f1_max": 0.8858024691358025
+    },
+    "paired_sound_emg/logistic_regression": {
+      "folds": [
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 567,
+          "precision": 0.7589498806682577,
+          "recall": 0.9665653495440729,
+          "f1": 0.8502673796791443,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              137,
+              101
+            ],
+            [
+              11,
+              318
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 559,
+          "precision": 0.9788519637462235,
+          "recall": 0.9025069637883009,
+          "f1": 0.9391304347826087,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              193,
+              7
+            ],
+            [
+              35,
+              324
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 20,
+          "test_participants": 6,
+          "test_windows": 567,
+          "precision": 0.9405684754521964,
+          "recall": 0.978494623655914,
+          "f1": 0.9591567852437418,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              172,
+              23
+            ],
+            [
+              8,
+              364
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 516,
+          "precision": 1.0,
+          "recall": 0.9053627760252366,
+          "f1": 0.9503311258278145,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              199,
+              0
+            ],
+            [
+              30,
+              287
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 513,
+          "precision": 0.9968051118210862,
+          "recall": 0.9968051118210862,
+          "f1": 0.9968051118210862,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              199,
+              1
+            ],
+            [
+              1,
+              312
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        }
+      ],
+      "pooled_oof": {
+        "precision": 0.924006908462867,
+        "recall": 0.9497041420118343,
+        "f1": 0.9366793113510359,
+        "confusion_matrix_true_rows_pred_columns": [
+          [
+            900,
+            132
+          ],
+          [
+            85,
+            1605
+          ]
+        ],
+        "class_order": [
+          "non_swallow_event",
+          "swallow_event"
+        ]
+      },
+      "subject_cluster_f1_ci": {
+        "low": 0.8999477528405857,
+        "high": 0.9711800318597116,
+        "method": "subject_cluster_percentile",
+        "iterations": 1000,
+        "seed": 2026
+      },
+      "fold_f1_min": 0.8502673796791443,
+      "fold_f1_max": 0.9968051118210862
+    },
+    "paired_sound_emg/random_forest": {
+      "folds": [
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 567,
+          "precision": 0.7954545454545454,
+          "recall": 0.9574468085106383,
+          "f1": 0.8689655172413793,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              157,
+              81
+            ],
+            [
+              14,
+              315
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 559,
+          "precision": 0.9090909090909091,
+          "recall": 0.8356545961002786,
+          "f1": 0.8708272859216255,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              170,
+              30
+            ],
+            [
+              59,
+              300
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 20,
+          "test_participants": 6,
+          "test_windows": 567,
+          "precision": 0.9230769230769231,
+          "recall": 0.9354838709677419,
+          "f1": 0.9292389853137517,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              166,
+              29
+            ],
+            [
+              24,
+              348
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 516,
+          "precision": 1.0,
+          "recall": 0.8391167192429022,
+          "f1": 0.9125214408233276,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              199,
+              0
+            ],
+            [
+              51,
+              266
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        },
+        {
+          "training_participants": 21,
+          "test_participants": 5,
+          "test_windows": 513,
+          "precision": 1.0,
+          "recall": 0.9776357827476039,
+          "f1": 0.9886914378029079,
+          "confusion_matrix_true_rows_pred_columns": [
+            [
+              200,
+              0
+            ],
+            [
+              7,
+              306
+            ]
+          ],
+          "class_order": [
+            "non_swallow_event",
+            "swallow_event"
+          ]
+        }
+      ],
+      "pooled_oof": {
+        "precision": 0.9164179104477612,
+        "recall": 0.908284023668639,
+        "f1": 0.912332838038633,
+        "confusion_matrix_true_rows_pred_columns": [
+          [
+            892,
+            140
+          ],
+          [
+            155,
+            1535
+          ]
+        ],
+        "class_order": [
+          "non_swallow_event",
+          "swallow_event"
+        ]
+      },
+      "subject_cluster_f1_ci": {
+        "low": 0.8699772905029042,
+        "high": 0.9538429195568654,
+        "method": "subject_cluster_percentile",
+        "iterations": 1000,
+        "seed": 2026
+      },
+      "fold_f1_min": 0.8689655172413793,
+      "fold_f1_max": 0.9886914378029079
+    }
+  },
+  "limitations": [
+    "Prior data/model exploration means these are exploratory estimates",
+    "Publisher event clips only; no continuous false-alarm metrics",
+    "No optical/respiratory/actual-prototype channel is included",
+    "This study does not change the validation-selected M01 reference"
+  ]
+}

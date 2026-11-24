@@ -25,3 +25,9 @@ No planned task is a measured result. Major deviations from the locked architect
 ## Executed status
 
 D02 and M01 completed for authorized D4 v2 processed clips; M02 completed as an exploratory CNN comparison. M03 export/operator audit completed, but quantization acceptance is blocked by an outlier. Repository selection and private visibility for R01 are resolved; feature-branch/draft-PR publication is the active handoff. R02, F01 and all actual hardware/safety/clinical gates remain open. No external validation or target inference is claimed.
+
+## Milestone 02 evidence and open gates
+
+Completed: fixed-CNN calibration comparison, FP32/reference-kernel controls, internal activation intervention, input-range accounting, six conventional grouped-CV ablations, three linear INT8 comparators, and cross-language numerical guard tests. All six quantized candidates failed frozen numerical validation criteria and remain blocked; thresholds were not relaxed.
+
+Next: predeclare a bounded/QAT or validated-normalization study using training/validation data; retain failed trials; obtain independent confirmation data; implement only accepted model integration with actual TFLM/ESP-NN target benchmarks. Physical sensor acquisition, phantom metrology, safety review and M1/M2 evidence gates remain open. The initial simulator target build has passed; hardware operation has not been measured.

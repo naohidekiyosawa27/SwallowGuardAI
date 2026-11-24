@@ -1,0 +1,34 @@
+{
+  "protocol_id": "M0-R2-quantization-abstention-v1",
+  "mode": "RESEARCH MODE",
+  "source_base_commit": "a511265d7a82f81140a81c79cc906b741dc06514",
+  "dataset": "D4_v2_deduplicated_4050",
+  "model_weights": "fixed_existing_M0_CNN_no_retraining",
+  "normalization": "unchanged_training_only_M01_scaler",
+  "calibration_fit_partition": "original_train_26_participants_only",
+  "calibration_candidates": ["existing_random256", "subject_class_extrema512", "all_training"],
+  "gate": "reject_nonfinite_or_any_input_outside_exact_INT8_representable_range",
+  "candidate_selection_partition": "original_validation_6_participants",
+  "validation_acceptance": {
+    "minimum_coverage": 0.95,
+    "maximum_absolute_probability_error_on_accepted": 0.05,
+    "minimum_threshold_agreement_on_accepted": 0.99,
+    "maximum_f1_loss_accepted_int8_vs_accepted_float": 0.01,
+    "maximum_model_bytes_exclusive": 100000
+  },
+  "selection_order": ["greatest_validation_coverage", "lowest_validation_p99_probability_error", "smallest_calibration_count", "candidate_name"],
+  "original_test_usage": "regression_only_after_selection; already_exposed_in_M01; not_new_confirmatory_validation",
+  "reporting": ["all_window_denominator", "accepted_counts", "abstentions_by_class", "2x3_confusion_with_abstain", "accepted_F1_and_subject_cluster_CI", "accepted_correct_fraction_of_all_windows", "raw_ungated_parity_for_diagnostics"],
+  "companion_ablation": {
+    "participants": "original_train_26_only",
+    "folds": 5,
+    "group": "participant_including_all_sessions",
+    "fixed_models": ["standardized_logistic_regression", "random_forest_50_trees_depth5"],
+    "modalities": ["sound_only", "emg_only", "paired_sound_emg"],
+    "purpose": "exploratory_M0_robustness; no_new_deployment_selection"
+  },
+  "human_or_clinical_claims": false,
+  "deployment_approval": false,
+  "external_validation": false,
+  "paid_compute": false
+}

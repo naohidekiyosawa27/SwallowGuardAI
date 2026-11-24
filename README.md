@@ -3,7 +3,7 @@
 **RESEARCH MODE — event recognition and mechanical-phantom research only.**
 No clinical diagnosis, aspiration detection, swallowing-safety clearance, diet recommendation or autonomous treatment is available. M0/M1 outputs describe events, never patient risk.
 
-This is an initial, testable engineering workspace. See [the measured status](reports/MILESTONE_01.md), [dataset inventory](docs/DATASETS.md), [architecture](docs/ARCHITECTURE.md), [backlog](docs/BACKLOG.md) and [safety gates](docs/SAFETY_AND_PHANTOM.md).
+The latest research milestone traces internal INT8 saturation, rejects all six tested numerical candidates, and adds five-fold participant-grouped ablations. See [Milestone 02](reports/MILESTONE_02.md), [the initial pilot](reports/MILESTONE_01.md), [dataset inventory](docs/DATASETS.md), [architecture](docs/ARCHITECTURE.md), [backlog](docs/BACKLOG.md) and [safety gates](docs/SAFETY_AND_PHANTOM.md).
 
 ## Quick start
 

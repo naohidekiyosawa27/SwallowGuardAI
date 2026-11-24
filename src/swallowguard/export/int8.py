@@ -5,8 +5,17 @@ import numpy as np
 ALLOWED_OPS = {"RESHAPE", "CONV_2D", "MEAN", "FULLY_CONNECTED", "LOGISTIC", "CONCATENATION"}
 
 
+def input_range(scale, zero_point):
+    if not np.isscalar(scale) or not np.isfinite(scale) or scale <= 0:
+        raise ValueError('Invalid INT8 scale')
+    if not isinstance(zero_point,(int,np.integer)) or not -128 <= zero_point <= 127:
+        raise ValueError('Invalid INT8 zero point')
+    return (-128-int(zero_point))*float(scale),(127-int(zero_point))*float(scale)
+
+
 def quantize_input(x, scale, zero_point):
-    if not np.isfinite(scale) or scale <= 0 or not np.isfinite(x).all():
+    input_range(scale,zero_point)
+    if not np.size(x) or not np.isfinite(x).all():
         raise ValueError("Invalid INT8 calibration or input")
     return np.clip(np.rint(np.asarray(x)/scale+zero_point),-128,127).astype(np.int8)
 
@@ -18,13 +27,27 @@ def checked_quantize_input(x, scale, zero_point):
     safety. Its effect on abstention must be measured on future independent data.
     """
     q=quantize_input(x,scale,zero_point)
-    minimum,maximum=(-128-zero_point)*scale,(127-zero_point)*scale
-    if np.any(np.asarray(x)<minimum) or np.any(np.asarray(x)>maximum):
+    minimum,maximum=input_range(scale,zero_point)
+    # Compare in double precision against the exact stored float32 scale.
+    values=np.asarray(x,dtype=np.float64)
+    if np.any(values<minimum) or np.any(values>maximum):
         raise ValueError('invalid_measurement: input exceeds INT8 calibration range')
     return q
 
 
-def convert(model, training_inputs, *, partition):
+def fixed_converter(model):
+    """Pinned fixed-signature/frozen-weight converter, shared by diagnostics."""
+    import tensorflow as tf
+    specs=[tf.TensorSpec([1,*inp.shape[1:]],tf.float32,name=inp.name.split(':')[0]) for inp in model.inputs]
+    @tf.function(input_signature=specs)
+    def serving(*args):
+        return model(list(args) if len(args)>1 else args[0],training=False)
+    from tensorflow.python.framework.convert_to_constants import convert_variables_to_constants_v2
+    frozen=convert_variables_to_constants_v2(serving.get_concrete_function())
+    return tf.lite.TFLiteConverter.from_concrete_functions([frozen])
+
+
+def convert(model, training_inputs, *, partition, representative_indices=None):
     import tensorflow as tf
     if partition != "train":
         raise ValueError("Representative set must come exclusively from training subjects")
@@ -32,24 +55,23 @@ def convert(model, training_inputs, *, partition):
         raise ValueError("Invalid representative input set")
     if any(len(x) != len(training_inputs[0]) or not np.isfinite(x).all() for x in training_inputs):
         raise ValueError("Missing/unpaired representative inputs")
+    if representative_indices is None:
+        selected=np.random.default_rng(2026).permutation(len(training_inputs[0]))[:256]
+    else:
+        selected=np.asarray(representative_indices)
+        if selected.ndim!=1 or not len(selected) or not np.issubdtype(selected.dtype,np.integer) or np.any(selected<0) or np.any(selected>=len(training_inputs[0])) or len(np.unique(selected))!=len(selected):
+            raise ValueError('Invalid representative training indices')
     def representative():
         # Deterministic coverage across training recordings, rather than the
         # first participant/class-sorted block. Never use held-out samples.
-        selected=np.random.default_rng(2026).permutation(len(training_inputs[0]))[:256]
         for i in selected:
             yield [np.asarray(x[i:i+1],dtype=np.float32) for x in training_inputs]
     # Embedded inference uses batch 1 with fixed temporal/channel dimensions.
     # Freeze this signature to avoid SHAPE/PACK/STRIDED_SLICE introduced by
     # Keras dynamic-batch reshape bookkeeping.
-    specs=[tf.TensorSpec([1,*inp.shape[1:]],tf.float32,name=inp.name.split(':')[0]) for inp in model.inputs]
-    @tf.function(input_signature=specs)
-    def serving(*args):
-        return model(list(args) if len(args)>1 else args[0],training=False)
     # Freeze resources as constants too: a concrete signature alone can retain
     # READ_VARIABLE with newer Keras, which is unsuitable for this TFLM model.
-    from tensorflow.python.framework.convert_to_constants import convert_variables_to_constants_v2
-    frozen=convert_variables_to_constants_v2(serving.get_concrete_function())
-    converter = tf.lite.TFLiteConverter.from_concrete_functions([frozen])
+    converter = fixed_converter(model)
     converter.optimizations = [tf.lite.Optimize.DEFAULT]
     converter.representative_dataset = representative
     converter.target_spec.supported_ops = [tf.lite.OpsSet.TFLITE_BUILTINS_INT8]

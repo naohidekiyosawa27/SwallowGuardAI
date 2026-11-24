@@ -1,0 +1,170 @@
+{
+  "mode": "RESEARCH MODE",
+  "stage": "M0 conventional comparator",
+  "parameters": 16,
+  "keras_vs_sklearn_validation_max_probability_error": 4.5424338096511363e-07,
+  "provenance": {
+    "protocol_sha256": "faada8b0df6a94be33fe7bb5f93c97703cff22e39369889e491fee84bf001d8a",
+    "features_sha256": "864ae682269814ad7b037c256cd9563b16d0c727447521cc927ab1e3e6273674",
+    "fit_partition": "train",
+    "normalization_fit_partition": "train",
+    "calibration_partition": "train",
+    "calibration_count": 2722,
+    "seed": 2026,
+    "tensorflow": "2.18.1"
+  },
+  "validation": {
+    "all_windows": 602,
+    "accepted_windows": 598,
+    "abstained_windows": 4,
+    "coverage": 0.9933554817275747,
+    "confusion_true_rows_pred_non_swallow_swallow_abstain": [
+      [
+        211,
+        29,
+        4
+      ],
+      [
+        44,
+        314,
+        0
+      ]
+    ],
+    "abstentions_by_true_class": {
+      "non_swallow": 4,
+      "swallow": 0
+    },
+    "accepted_correct_fraction_of_all_windows": 0.872093023255814,
+    "accepted_int8_metrics": {
+      "precision": 0.9154518950437318,
+      "recall": 0.8770949720670391,
+      "f1": 0.8958630527817404,
+      "confusion_matrix_true_rows_pred_columns": [
+        [
+          211,
+          29
+        ],
+        [
+          44,
+          314
+        ]
+      ],
+      "class_order": [
+        "non_swallow_event",
+        "swallow_event"
+      ]
+    },
+    "accepted_float_metrics": {
+      "precision": 0.9186046511627907,
+      "recall": 0.88268156424581,
+      "f1": 0.9002849002849003,
+      "confusion_matrix_true_rows_pred_columns": [
+        [
+          212,
+          28
+        ],
+        [
+          42,
+          316
+        ]
+      ],
+      "class_order": [
+        "non_swallow_event",
+        "swallow_event"
+      ]
+    },
+    "accepted_f1_ci": {
+      "low": 0.7770700636942676,
+      "high": 0.9887640449438202,
+      "method": "subject_cluster_percentile",
+      "iterations": 1000,
+      "seed": 2026
+    },
+    "max_probability_error_accepted": 0.31532764434814453,
+    "p99_probability_error_accepted": 0.22399027079343758,
+    "threshold_agreement_accepted": 0.9782608695652174
+  },
+  "validation_numerical_criteria_passed": false,
+  "regression": null,
+  "int8": {
+    "bytes": 1352,
+    "below_100000_byte_target": true,
+    "sha256": "93215fdbf954a003c219f743d64be6410567264f902f8f6d46d35eb1f7007c0e",
+    "operators": [
+      "FULLY_CONNECTED",
+      "LOGISTIC"
+    ],
+    "inputs": [
+      {
+        "name": "paired_features",
+        "shape": [
+          1,
+          15
+        ],
+        "dtype": "int8",
+        "scale": 0.20995907485485077,
+        "zero_point": 43
+      }
+    ],
+    "outputs": [
+      {
+        "name": "Identity",
+        "shape": [
+          1,
+          1
+        ],
+        "dtype": "int8",
+        "scale": 0.00390625,
+        "zero_point": -128
+      }
+    ],
+    "latency_ms": null,
+    "tensor_arena_bytes": null,
+    "device_verified": false
+  },
+  "deployment_ready": false,
+  "changes_M01_reference": false,
+  "clinical_validation": false,
+  "normalization": {
+    "mean": [
+      1.85062035849426e-08,
+      0.07160731901776711,
+      0.07160731917908338,
+      1.3951146970676744,
+      0.020523868266049225,
+      0.010761478431648007,
+      0.015264305415097254,
+      0.008164567726539295,
+      0.010260356201947577,
+      0.013683753605526854,
+      0.0185867395793782,
+      0.03670536141669111,
+      0.04602688450719435,
+      0.00042118125305820137,
+      0.000554350350603749
+    ],
+    "scale": [
+      8.546658172376877e-06,
+      0.07878993396841039,
+      0.07878993428534717,
+      1.1103412195725313,
+      0.028215165922986007,
+      0.008986527108192323,
+      0.006594159199937473,
+      0.008047493493027058,
+      0.0053237905952977435,
+      0.011863569970539735,
+      0.008039447920179982,
+      0.034396669819014354,
+      0.0252770282311637,
+      0.00036287256764652124,
+      0.0002492805678229445
+    ]
+  },
+  "limitations": [
+    "Feature extraction CPU/memory and hardware latency not measured",
+    "Cannot compare accepted-only scores without coverage",
+    "No independent external test",
+    "M1 architecture and M2 clinical gate unchanged"
+  ]
+}

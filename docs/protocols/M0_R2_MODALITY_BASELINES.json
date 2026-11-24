@@ -1,0 +1,17 @@
+{
+  "protocol_id": "M0-R2-modality-linear-v1",
+  "sequence": "Exploratory follow-up after paired-feature linear comparator also failed parity; all additional trials must be reported",
+  "mode": "RESEARCH MODE",
+  "feature_sets": ["sound", "emg"],
+  "reason": "Both were predefined ablations in M0_R2_FROZEN.json; compare quantization fidelity without inventing paired modalities",
+  "fit": "original 26 training participants only; unchanged balanced LogisticRegression C=1 max_iter=1000 seed=2026",
+  "normalization_and_calibration": "fit StandardScaler and calibrate all original training rows only",
+  "validation": "original six validation participants",
+  "acceptance": {"minimum_coverage": 0.95, "maximum_probability_error": 0.05, "minimum_threshold_agreement": 0.99, "maximum_f1_loss": 0.01, "maximum_model_bytes_exclusive": 100000},
+  "regression": "Only for numerically eligible comparator; exposed original test is regression, never independent confirmation",
+  "new_reference_selection": false,
+  "architecture_role": "Conventional M0 comparators; locked M1 CNN unchanged",
+  "multiple_comparisons": "Report all attempts; no confirmatory significance or superiority claim",
+  "clinical_validation": false,
+  "deployment_approval": false
+}
