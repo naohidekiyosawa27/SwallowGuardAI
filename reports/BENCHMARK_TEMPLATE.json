@@ -1,0 +1,21 @@
+{
+  "status": "unmeasured_template",
+  "source": null,
+  "firmware_commit": null,
+  "model_sha256": null,
+  "hardware_revision": null,
+  "clock_mhz": null,
+  "model_bytes": null,
+  "arena_peak_bytes": null,
+  "heap_min_free_bytes": null,
+  "stack_high_water_bytes": null,
+  "latency_p50_ms": null,
+  "latency_p95_ms": null,
+  "window_seconds": null,
+  "power_watts": null,
+  "sample_rates_measured_hz": null,
+  "clock_skew_ppm": null,
+  "synchronization_residual_us": null,
+  "quality_abstention_fraction": null,
+  "meets_100kb_100ms_targets": null
+}

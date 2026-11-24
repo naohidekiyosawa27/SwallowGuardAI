@@ -1,0 +1,7 @@
+menu "SWALLOWGUARD research"
+config SWALLOWGUARD_SIMULATED
+    bool "Simulated bench acquisition only"
+    default y
+    help
+        No human-connected sensors or clinical outputs are implemented.
+endmenu

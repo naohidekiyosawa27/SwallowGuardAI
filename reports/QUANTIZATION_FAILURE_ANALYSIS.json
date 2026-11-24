@@ -1,0 +1,20 @@
+{
+  "source": "D4_v2 heldout event clips",
+  "clinical": false,
+  "n_test": 726,
+  "input_representable_range": [
+    -39.10552215576172,
+    38.80001026391983
+  ],
+  "largest_parity_error": 0.9453125,
+  "float_probability_at_largest_error": 1.0,
+  "int8_probability_at_largest_error": 0.0546875,
+  "input_saturation_fraction_at_largest_error": 0.05391666666666667,
+  "normalized_input_range_at_largest_error": [
+    -1702.6070556640625,
+    1399.1795654296875
+  ],
+  "samples_error_above_0_05": 1,
+  "interpretation": "Largest discrepancy coincides with input saturation; causal attribution not proven. Deployment blocked pending range gating and independent validation.",
+  "deployment_ready": false
+}
