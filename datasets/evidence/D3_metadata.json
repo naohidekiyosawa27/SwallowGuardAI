@@ -1,0 +1,13 @@
+{
+  "dataset_id": "D3",
+  "retrieved_at_utc": "2026-11-24T18:02:11.544993+00:00",
+  "api_url": "https://api.figshare.com/v2/articles/28528115",
+  "doi": "10.18742/28528115.v1",
+  "license": {
+    "value": 200,
+    "name": "King\u2019s Internal Access Only",
+    "url": "https://www.kcl.ac.uk/researchsupport/assets/internalaccessonly-description.pdf"
+  },
+  "access": "restricted_internal",
+  "files": []
+}

@@ -1,0 +1,84 @@
+{
+  "dataset_id": "D4",
+  "retrieved_at_utc": "2026-11-24T18:02:11.544993+00:00",
+  "api_url": "https://api.figshare.com/v2/articles/33952399",
+  "doi": "10.18742/33952399.v2",
+  "license": {
+    "value": 52,
+    "name": "CC BY",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "access": "open",
+  "files": [
+    {
+      "name": "full_length_recordings_part_001_of_002.zip",
+      "bytes": 3178418098,
+      "md5": "cf3743a46b4bdaf9f0a4bd2f529c21c9"
+    },
+    {
+      "name": "full_length_recordings_part_002_of_002.zip",
+      "bytes": 1019125088,
+      "md5": "1457840757d6fe31393cadd9e76ccda9"
+    },
+    {
+      "name": "KORDS_archive_members_v02.csv",
+      "bytes": 776844,
+      "md5": "1606fb473ea806fa7efbcf1cad1cdafa"
+    },
+    {
+      "name": "KORDS_upload_manifest_v02.csv",
+      "bytes": 1509,
+      "md5": "63a13a355a2be10ec018c9defd514fea"
+    },
+    {
+      "name": "KORDS_UPLOAD_README_v02.txt",
+      "bytes": 821,
+      "md5": "83bb8b3d9a6a54373474a37e9d23d59b"
+    },
+    {
+      "name": "processed_clips_part_001_of_001.zip",
+      "bytes": 1506737987,
+      "md5": "cae6eb3013bcd7e3d1afe0278c6143fd"
+    },
+    {
+      "name": "data_dictionary.csv",
+      "bytes": 805,
+      "md5": "076d3e48d89cc9e03459453dd14e2abb"
+    },
+    {
+      "name": "long_recording_manifest.csv",
+      "bytes": 356578,
+      "md5": "735e3e6fed80dbf8c76af95d8e0fda09"
+    },
+    {
+      "name": "participant_metadata.csv",
+      "bytes": 611,
+      "md5": "6a40fcbd1ceaefa921e0a0722725e428"
+    },
+    {
+      "name": "processed_clip_manifest.csv",
+      "bytes": 546139,
+      "md5": "3429792519df91b5769da21edf05e6e7"
+    },
+    {
+      "name": "session_manifest.csv",
+      "bytes": 1081,
+      "md5": "0453fd689798a00050b0b29c1d75e3ed"
+    },
+    {
+      "name": "README.txt",
+      "bytes": 1920,
+      "md5": "414d679daf0a93bea07d6ab334f5b6da"
+    },
+    {
+      "name": "technical_validation_summary.txt",
+      "bytes": 803,
+      "md5": "debc4c6fe9ae2e149b66d54f0f12203b"
+    },
+    {
+      "name": "KORDS_Code_Public_Release_Candidate_v02.zip",
+      "bytes": 12213,
+      "md5": "d59170fd1d17fd6ee9643ef255a7be3e"
+    }
+  ]
+}

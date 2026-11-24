@@ -1,0 +1,19 @@
+{
+  "dataset_id": "D2",
+  "retrieved_at_utc": "2026-11-24T18:02:11.544993+00:00",
+  "api_url": "https://api.figshare.com/v2/articles/24297766",
+  "doi": "10.5522/04/24297766.v1",
+  "license": {
+    "value": 2,
+    "name": "CC0",
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "access": "open",
+  "files": [
+    {
+      "name": "sEMG_of_Swallow_Cough_and_Speech.zip",
+      "bytes": 1123928984,
+      "md5": "596fa1666c8048298b5fc83e0e28b751"
+    }
+  ]
+}

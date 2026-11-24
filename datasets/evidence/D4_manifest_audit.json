@@ -1,0 +1,50 @@
+{
+  "dataset_id": "D4",
+  "version": 2,
+  "provenance": "aggregates derived from publisher CSV manifests; no participant rows retained in repository",
+  "class_counts": {
+    "Fluid": 820,
+    "Saliva": 843,
+    "Solid": 821,
+    "ThroatClearing": 776,
+    "Cough": 793
+  },
+  "clip_count": 4053,
+  "participants": 38,
+  "sessions": 41,
+  "shapes": {
+    "40001x3": 4053
+  },
+  "metadata_files": [
+    {
+      "filename": "technical_validation_summary.txt",
+      "bytes": 803,
+      "md5_matched_publisher": true,
+      "sha256": "c186e038359cbdd908fcea0f3d226e1c8edbca4e5808cfee827bc23c2da28a45"
+    },
+    {
+      "filename": "README.txt",
+      "bytes": 1920,
+      "md5_matched_publisher": true,
+      "sha256": "41f6cd590da4a7f6a79839380d3703b31e2e7c9e704ac40bb96ffdcd63aed711"
+    },
+    {
+      "filename": "session_manifest.csv",
+      "bytes": 1081,
+      "md5_matched_publisher": true,
+      "sha256": "0f2af90a48449e573d072950eab1be48a2e8e7ed1e38b5dd61dccadccfd3aee6"
+    },
+    {
+      "filename": "processed_clip_manifest.csv",
+      "bytes": 546139,
+      "md5_matched_publisher": true,
+      "sha256": "4d3340e3b26266cd029e6e16320947823b45cfced7b786b9729dcf7539c70384"
+    },
+    {
+      "filename": "data_dictionary.csv",
+      "bytes": 805,
+      "md5_matched_publisher": true,
+      "sha256": "dcf46dac40ffb0a2e4c710b4c32296abd746fd3ec005315b29bd5a4086dbb38d"
+    }
+  ]
+}

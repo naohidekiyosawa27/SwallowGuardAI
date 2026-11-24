@@ -1,0 +1,10 @@
+{
+  "revision": "candidate-0.3.0",
+  "validated": false,
+  "optical": {"calibration_um_per_count": null, "output_hz": 200},
+  "pvdf": {"input_hz": 8000, "output_hz": 2000, "antialias": "polyphase_FIR"},
+  "emg": {"input_hz": 2000, "bandpass_hz": [20, 450], "envelope_lowpass_hz": 10, "output_hz": 200},
+  "resp": {"input_hz": 100, "calibrated_pressure_to_flow": false},
+  "quality": {"max_gap_periods_assumption": 1.5, "max_rate_error_fraction_assumption": 0.02, "full_scale": null},
+  "clock": {"common_trigger_required": true, "skew_ppm_measured": null, "filter_delay_us_measured": null}
+}
