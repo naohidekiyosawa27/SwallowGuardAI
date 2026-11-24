@@ -1,0 +1,97 @@
+{
+  "review_date": "2026-11-25",
+  "scope": "Recent primary journal sources 2025–2026 plus official QAT implementation; no transfer of clinical performance claims",
+  "references": [
+    {
+      "id": "J1",
+      "title": "MicroNAS for memory and latency constrained hardware aware neural architecture search in time series classification on microcontrollers",
+      "authors": [
+        "Tobias King",
+        "Yexu Zhou",
+        "Tobias Röddiger",
+        "Michael Beigl"
+      ],
+      "journal": "Scientific Reports",
+      "year": 2025,
+      "doi": "10.1038/s41598-025-90764-z",
+      "source": "https://publikationen.bibliothek.kit.edu/1000179785/157429577",
+      "evidence": "Primary publisher record and author-institution PDF/abstract inspected; local PDF retry returned HTTP 503",
+      "use": "Motivates resource-constrained time-series model design and quantization-aware evaluation; no NAS search performed here"
+    },
+    {
+      "id": "J2",
+      "title": "From PPG to Blood Pressure at the Edge: Quantization-Aware Architecture Selection and On-MCU Validation",
+      "authors": [
+        "Elisabetta Leogrande",
+        "Emanuele De Luca",
+        "Francesco Dell’Olio"
+      ],
+      "journal": "Sensors",
+      "year": 2026,
+      "doi": "10.3390/s26092674",
+      "source": "https://www.mdpi.com/1424-8220/26/9/2674",
+      "evidence": "Primary full-text methods and limitations inspected",
+      "use": "Use quantization stability in architecture evaluation; paper acknowledges random window splitting and no subject disjointness, which is not adopted"
+    },
+    {
+      "id": "J3",
+      "title": "Cross-Layer Resource Optimization for Ultra-Low-Power TinyML Inference on ARM Cortex-M Microcontrollers",
+      "authors": [
+        "Abdulaziz G. Alanazi",
+        "Haifa A. Alanazi",
+        "Nasser S. Albalawi"
+      ],
+      "journal": "Electronics",
+      "year": 2026,
+      "doi": "10.3390/electronics15132918",
+      "source": "https://www.mdpi.com/2079-9292/15/13/2918",
+      "evidence": "Primary full-text methods inspected",
+      "use": "Joint model/memory/hardware constraints; paper z-score normalization is not a mathematical hard bound. Our bounded transform is a new tested adaptation, not literal reproduction. Mixed precision/DVFS are not implemented"
+    },
+    {
+      "id": "D1",
+      "title": "Quantization aware training comprehensive guide",
+      "authors": [
+        "TensorFlow Model Optimization"
+      ],
+      "journal": null,
+      "year": null,
+      "doi": null,
+      "source": "https://www.tensorflow.org/model_optimization/guide/quantization/training_comprehensive_guide",
+      "evidence": "Official implementation reference, not a journal article",
+      "use": "Fine-tune with QAT; custom QuantizeConfig is experimental and requires actual integer operator/parity/target checks"
+    },
+    {
+      "id": "J4",
+      "title": "LiteMamba-EMG: A Lightweight Mamba-based Framework for Robust sEMG-based Swallowing Activity Classification in Dysphagia Patients",
+      "authors": [
+        "Linlin Zhao",
+        "Yongxiang Zou",
+        "Xiuxiu Shi",
+        "Long Cheng"
+      ],
+      "journal": "Machine Intelligence Research",
+      "year": 2026,
+      "doi": "10.1007/s11633-026-1663-8",
+      "source": "https://www.mi-research.net/article/doi/10.1007/s11633-026-1663-8",
+      "evidence": "Publisher metadata and abstract inspected after R3 training; full methods/target hardware not verified",
+      "use": "Future hypothesis: self-supervised pretraining and channel interaction. Abstract reports 2.56M parameters, incompatible with a direct dense INT8 model below 100KB. No Mamba, pretraining, distillation or source performance reproduced"
+    },
+    {
+      "id": "J5",
+      "title": "Detection of Swallowing Events by Decision Tree Learning of Polyvinylidene Fluoride Film Signals",
+      "authors": [
+        "Koretsu Takai",
+        "Keisuke Kitano",
+        "Yukihiro Michiwaki",
+        "Takuya Hashimoto"
+      ],
+      "journal": "Advanced Biomedical Engineering",
+      "year": 2026,
+      "doi": "10.14326/abe.15.215",
+      "source": "https://www.jstage.jst.go.jp/article/abe/15/0/15_215/_article/-char/en",
+      "evidence": "Publisher abstract and PDF measurement/preprocessing sections inspected after R3 training; participant split not verified",
+      "use": "Plan PVDF domain-transfer and continuous-event evaluation separately from D4 clip classification. No human procedure or published sensor performance reproduced"
+    }
+  ]
+}

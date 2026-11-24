@@ -1,0 +1,32 @@
+{
+ "protocol_id":"M0-R3-bounded-QAT-v1",
+ "mode":"RESEARCH MODE",
+ "source_base_commit":"26acec97e89cdcb39b1131b4dfa75e6a2577c63c",
+ "dataset":"D4_v2_deduplicated_4050",
+ "partition":"unchanged M01 subject groups: 26 train, 6 validation, 6 exposed regression participants",
+ "fit_and_quantization_data":"original training participants only",
+ "representations":{
+  "features":"training-only standardization then elementwise 0.9*z/(1+abs(z)); unchanged fifteen paired acoustic/EMG features",
+  "waveform":"per-window/channel centering and division by peak absolute centered value, times 0.9; no waveform clipping/imputation; absolute amplitude discarded"
+ },
+ "candidates":["features_PTQ","features_QAT","waveform_PTQ","waveform_QAT"],
+ "architectures":{
+  "features":"15 features -> Dense16 ReLU6 -> Dense1 linear -> sigmoid",
+  "waveform":"4000x3 -> temporal Conv8 k5 s2 ReLU6 -> Conv16 k5 s2 ReLU6 -> global mean -> Dense16 ReLU6 -> Dense1 -> sigmoid"
+ },
+ "QAT":"8-bit fixed input [-1,1], bounded activations and pooling [0,6], logit fake-quant [-8,8], sigmoid [0,255/256]; per-axis conv weights and per-tensor dense weights; finetune from matched float warm start",
+ "epochs":{"features_float_max":60,"waveform_float_max":40,"qat_max":30,"float_patience":12,"qat_patience":8},
+ "optimizer":{"float":"Adam 0.001","qat":"Adam 0.0003","batch_size":32,"seed":2026},
+ "checkpoint_selection":"maximum validation event F1, tie lowest validation BCE; early stop after declared patience",
+ "accuracy_requirement":{"minimum_validation_event_F1_int8":0.90},
+ "numerical_requirements_unchanged":{"minimum_coverage":0.95,"maximum_probability_error_shadow_float_vs_int8":0.05,"minimum_threshold_agreement":0.99,"maximum_F1_loss":0.01,"maximum_model_bytes_exclusive":100000},
+ "selection":"only eligible candidates; highest validation INT8 event F1, then lower max probability error, then smaller model bytes",
+ "parity_reference":"dequantization-free FP32 shadow with the same trained kernels/biases; additionally report QAT simulation parity separately",
+ "test_usage":"only selected candidate after frozen validation selection; original exposed regression only, not new confirmatory evidence",
+ "all_attempts_reported":true,
+ "M1_architecture_changed":false,
+ "M01_reference_changed":false,
+ "clinical_or_physical_hardware_approval":false,
+ "paid_compute":false,
+ "new_dataset_download":false
+}

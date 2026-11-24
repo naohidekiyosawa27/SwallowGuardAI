@@ -1,0 +1,117 @@
+test_feature_bound_and_monotonicity (test_bounded.BoundedRepresentations.test_feature_bound_and_monotonicity) ... ok
+test_feature_manifest_reconstructs_transform (test_bounded.BoundedRepresentations.test_feature_manifest_reconstructs_transform) ... ok
+test_feature_training_partition_required (test_bounded.BoundedRepresentations.test_feature_training_partition_required) ... ok
+test_flatline_rejected (test_bounded.BoundedRepresentations.test_flatline_rejected) ... ok
+test_invalid_flatline_threshold (test_bounded.BoundedRepresentations.test_invalid_flatline_threshold) ... ok
+test_invalid_headroom (test_bounded.BoundedRepresentations.test_invalid_headroom) ... ok
+test_nonfinite_rejected (test_bounded.BoundedRepresentations.test_nonfinite_rejected) ... ok
+test_per_window_no_cross_recording_fit (test_bounded.BoundedRepresentations.test_per_window_no_cross_recording_fit) ... ok
+test_window_bound_without_mutating_raw (test_bounded.BoundedRepresentations.test_window_bound_without_mutating_raw) ... ok
+test_window_gain_and_offset_invariance (test_bounded.BoundedRepresentations.test_window_gain_and_offset_invariance) ... ok
+test_actual_full_int8_export_has_input_headroom (test_bounded.QATExport.test_actual_full_int8_export_has_input_headroom) ... 2026-11-25 04:16:05.028740: I tensorflow/core/util/port.cc:153] oneDNN custom operations are on. You may see slightly different numerical results due to floating-point round-off errors from different computation orders. To turn them off, set the environment variable `TF_ENABLE_ONEDNN_OPTS=0`.
+2026-11-25 04:16:05.031542: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-11-25 04:16:05.045740: I external/local_xla/xla/tsl/cuda/cudart_stub.cc:32] Could not find cuda drivers on your machine, GPU will not be used.
+2026-11-25 04:16:05.070926: E external/local_xla/xla/stream_executor/cuda/cuda_fft.cc:477] Unable to register cuFFT factory: Attempting to register factory for plugin cuFFT when one has already been registered
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+E0000 00:00:1795547765.115529       5 cuda_dnn.cc:8310] Unable to register cuDNN factory: Attempting to register factory for plugin cuDNN when one has already been registered
+E0000 00:00:1795547765.128151       5 cuda_blas.cc:1418] Unable to register cuBLAS factory: Attempting to register factory for plugin cuBLAS when one has already been registered
+2026-11-25 04:16:05.189921: I tensorflow/core/platform/cpu_feature_guard.cc:210] This TensorFlow binary is optimized to use available CPU instructions in performance-critical operations.
+To enable the following instructions: AVX2 AVX512F AVX512_VNNI AVX512_BF16 AVX512_FP16 AVX_VNNI FMA, in other operations, rebuild TensorFlow with the appropriate compiler flags.
+/workspace/scratch/1ed872e1108f/swallowguard-ai/.venv-qat/lib/python3.12/site-packages/tensorflow_model_optimization/__init__.py:65: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  if (distutils.version.LooseVersion(tf.version.VERSION) <
+/workspace/scratch/1ed872e1108f/swallowguard-ai/.venv-qat/lib/python3.12/site-packages/tensorflow_model_optimization/__init__.py:66: DeprecationWarning: distutils Version classes are deprecated. Use packaging.version instead.
+  distutils.version.LooseVersion(required_tensorflow_version)):
+2026-11-25 04:16:07.457072: E external/local_xla/xla/stream_executor/cuda/cuda_driver.cc:152] failed call to cuInit: INTERNAL: CUDA error: Failed call to cuInit: UNKNOWN ERROR (303)
+I0000 00:00:1795547768.497787       5 devices.cc:67] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0
+WARNING: All log messages before absl::InitializeLog() is called are written to STDERR
+I0000 00:00:1795547768.498243       5 single_machine.cc:361] Starting new session
+WARNING:absl:Please consider providing the trackable_obj argument in the from_concrete_functions. Providing without the trackable_obj argument is deprecated and it will use the deprecated conversion path.
+I0000 00:00:1795547768.530157       5 devices.cc:67] Number of eligible GPUs (core count >= 8, compute capability >= 0.0): 0
+I0000 00:00:1795547768.530259       5 single_machine.cc:361] Starting new session
+/workspace/scratch/1ed872e1108f/swallowguard-ai/.venv-qat/lib/python3.12/site-packages/tensorflow/lite/python/convert.py:997: UserWarning: Statistics for quantized inputs were expected, but not specified; continuing anyway.
+  warnings.warn(
+W0000 00:00:1795547768.558836       5 tf_tfl_flatbuffer_helpers.cc:365] Ignored output_format.
+W0000 00:00:1795547768.558869       5 tf_tfl_flatbuffer_helpers.cc:368] Ignored drop_control_dependency.
+fully_quantize: 0, inference_type: 6, input_inference_type: INT8, output_inference_type: INT8
+2026-11-25 04:16:08.606356: I tensorflow/compiler/mlir/lite/flatbuffer_export.cc:3893] Estimated count of arithmetic ops: 576  ops, equivalently 288  MACs
+/workspace/scratch/1ed872e1108f/swallowguard-ai/.venv-qat/lib/python3.12/site-packages/tensorflow/lite/python/interpreter.py:451: UserWarning:     Warning: Please use the LiteRT interpreter from the ai_edge_litert package.
+    See the [migration guide](https://ai.google.dev/edge/litert/migration)
+    for details.
+    
+  warnings.warn(_INTERPRETER_DELETION_WARNING)
+INFO: Created TensorFlow Lite XNNPACK delegate for CPU.
+ok
+test_shadow_copies_unquantized_trained_weights (test_bounded.QATExport.test_shadow_copies_unquantized_trained_weights) ... ok
+test_python_cpp_agree_at_float32_boundaries (test_cpp_range.CrossLanguageRange.test_python_cpp_agree_at_float32_boundaries) ... ok
+test_d2_documented_fixture (test_research.Adapters.test_d2_documented_fixture) ... ok
+test_d2_timebase_guard (test_research.Adapters.test_d2_timebase_guard) ... ok
+test_d4_synthetic_mat (test_research.Adapters.test_d4_synthetic_mat) ... ok
+test_registry_restriction (test_research.Adapters.test_registry_restriction) ... ok
+test_synthetic_grouped_training (test_research.BaselineIntegration.test_synthetic_grouped_training) ... ok
+test_invalid_hides_probability (test_research.Contracts.test_invalid_hides_probability) ... ok
+test_no_m2 (test_research.Contracts.test_no_m2) ... ok
+test_paired_allowed (test_research.Contracts.test_paired_allowed) ... ok
+test_probability_validation (test_research.Contracts.test_probability_validation) ... ok
+test_recording_valid (test_research.Contracts.test_recording_valid) ... ok
+test_unpaired_rejected (test_research.Contracts.test_unpaired_rejected) ... ok
+test_ambiguous_windows_skipped (test_research.DSP.test_ambiguous_windows_skipped) ... ok
+test_antialias_attenuation (test_research.DSP.test_antialias_attenuation) ... ok
+test_envelope_shape (test_research.DSP.test_envelope_shape) ... ok
+test_features (test_research.DSP.test_features) ... ok
+test_filter_attenuates_low_frequency (test_research.DSP.test_filter_attenuates_low_frequency) ... ok
+test_filter_rejects_nyquist (test_research.DSP.test_filter_rejects_nyquist) ... ok
+test_missing_rejected (test_research.DSP.test_missing_rejected) ... ok
+test_normalizer_no_refit_on_test (test_research.DSP.test_normalizer_no_refit_on_test) ... ok
+test_normalizer_train_only (test_research.DSP.test_normalizer_train_only) ... ok
+test_optical_calibration (test_research.DSP.test_optical_calibration) ... ok
+test_clipping (test_research.Quality.test_clipping) ... ok
+test_detached (test_research.Quality.test_detached) ... ok
+test_duplicate (test_research.Quality.test_duplicate) ... ok
+test_flatline (test_research.Quality.test_flatline) ... ok
+test_gap (test_research.Quality.test_gap) ... ok
+test_good (test_research.Quality.test_good) ... ok
+test_motion (test_research.Quality.test_motion) ... ok
+test_nan (test_research.Quality.test_nan) ... ok
+test_rate_drift (test_research.Quality.test_rate_drift) ... ok
+test_sequence_gap (test_research.Quality.test_sequence_gap) ... ok
+test_tracking_loss (test_research.Quality.test_tracking_loss) ... ok
+test_invalid_scale (test_research.Quantization.test_invalid_scale) ... ok
+test_model_parameter_count (test_research.Quantization.test_model_parameter_count) ... ok
+test_quantization_saturates (test_research.Quantization.test_quantization_saturates) ... ok
+test_runtime_quantization_in_range (test_research.Quantization.test_runtime_quantization_in_range) ... ok
+test_runtime_quantization_range_rejected (test_research.Quantization.test_runtime_quantization_range_rejected) ... ok
+test_cluster_ci (test_research.SplitsMetrics.test_cluster_ci) ... ok
+test_confusion_orientation (test_research.SplitsMetrics.test_confusion_orientation) ... ok
+test_disjoint_subjects_all_sessions (test_research.SplitsMetrics.test_disjoint_subjects_all_sessions) ... ok
+test_insufficient_subjects (test_research.SplitsMetrics.test_insufficient_subjects) ... ok
+test_leakage_rejected (test_research.SplitsMetrics.test_leakage_rejected) ... ok
+test_reproducible (test_research.SplitsMetrics.test_reproducible) ... ok
+test_single_subject_ci_unavailable (test_research.SplitsMetrics.test_single_subject_ci_unavailable) ... ok
+test_affine_clock (test_research.Timing.test_affine_clock) ... ok
+test_delay_compensation (test_research.Timing.test_delay_compensation) ... ok
+test_duplicate_trigger_rejected (test_research.Timing.test_duplicate_trigger_rejected) ... ok
+test_frame_mapping_origin (test_research.Timing.test_frame_mapping_origin) ... ok
+test_origin_required (test_research.Timing.test_origin_required) ... ok
+test_deterministic_unique_coverage (test_selective.CalibrationSelection.test_deterministic_unique_coverage) ... ok
+test_extrema_preserved (test_selective.CalibrationSelection.test_extrema_preserved) ... ok
+test_insufficient_budget_rejected (test_selective.CalibrationSelection.test_insufficient_budget_rejected) ... ok
+test_training_only (test_selective.CalibrationSelection.test_training_only) ... ok
+test_documented_feature_layout_required (test_selective.GroupedAblation.test_documented_feature_layout_required) ... ok
+test_every_training_window_gets_one_grouped_oof_prediction (test_selective.GroupedAblation.test_every_training_window_gets_one_grouped_oof_prediction) ... ok
+test_bad_scale (test_selective.NumericGate.test_bad_scale) ... ok
+test_bad_zero_point (test_selective.NumericGate.test_bad_zero_point) ... ok
+test_boundary_and_nonfinite (test_selective.NumericGate.test_boundary_and_nonfinite) ... ok
+test_empty_rejected (test_selective.NumericGate.test_empty_rejected) ... ok
+test_single_sample_nonfinite_rejected (test_selective.NumericGate.test_single_sample_nonfinite_rejected) ... ok
+test_zero_point_range (test_selective.NumericGate.test_zero_point_range) ... ok
+test_abstention_remains_in_denominator (test_selective.SelectiveAccounting.test_abstention_remains_in_denominator) ... ok
+test_all_abstain (test_selective.SelectiveAccounting.test_all_abstain) ... ok
+test_invalid_probability (test_selective.SelectiveAccounting.test_invalid_probability) ... ok
+test_none_selected_if_all_fail (test_selective.SelectiveAccounting.test_none_selected_if_all_fail) ... ok
+test_selection_obeys_coverage_not_test (test_selective.SelectiveAccounting.test_selection_obeys_coverage_not_test) ... ok
+
+----------------------------------------------------------------------
+Ran 79 tests in 8.046s
+
+OK
+PASS: ring overflow/order, simulated rates, transport faults, numerical range/model validation guards, disabled clinical output

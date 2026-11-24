@@ -3,7 +3,7 @@
 **RESEARCH MODE — event recognition and mechanical-phantom research only.**
 No clinical diagnosis, aspiration detection, swallowing-safety clearance, diet recommendation or autonomous treatment is available. M0/M1 outputs describe events, never patient risk.
 
-The latest research milestone traces internal INT8 saturation, rejects all six tested numerical candidates, and adds five-fold participant-grouped ablations. See [Milestone 02](reports/MILESTONE_02.md), [the initial pilot](reports/MILESTONE_01.md), [dataset inventory](docs/DATASETS.md), [architecture](docs/ARCHITECTURE.md), [backlog](docs/BACKLOG.md) and [safety gates](docs/SAFETY_AND_PHANTOM.md).
+The latest research milestone passes the M0 numerical gate with a 5,800-byte full-INT8 bounded-QAT CNN. Validation F1 0.9391 is internal development evidence; independent confirmation and physical inference remain pending. See [Milestone 03](reports/MILESTONE_03.md), [recent AI evidence](docs/AI_RESEARCH_R3.md), [Milestone 02 saturation controls](reports/MILESTONE_02.md), [the initial pilot](reports/MILESTONE_01.md), [dataset inventory](docs/DATASETS.md), [architecture](docs/ARCHITECTURE.md), [backlog](docs/BACKLOG.md) and [safety gates](docs/SAFETY_AND_PHANTOM.md).
 
 ## Quick start
 
@@ -57,7 +57,7 @@ The synthetic TinyML check verifies interfaces only. Never cite it as experiment
 | `firmware/` | ESP-IDF simulated acquisition and host-testable C++ core |
 | `tests/` | Synthetic fixtures and behavioral/integration checks |
 | `.github/workflows/` | Python/host/ESP-IDF CI and optional TinyML check |
-| `models/cards/` | Explicit untrained/unvalidated model status |
+| `models/cards/` | Model scope, numerical acceptance and remaining validation gates |
 | `reports/` | Actual execution evidence and benchmark status |
 
 No patient records, waveforms, credentials or restricted archives belong in GitHub. Downloaded research files and intermediate artifacts are excluded by `.gitignore`. Code licensing remains an owner decision; dataset licenses do not license this code automatically.
