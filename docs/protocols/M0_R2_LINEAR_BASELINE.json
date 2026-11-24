@@ -1,0 +1,16 @@
+{
+  "protocol_id": "M0-R2-linear-reference-v1",
+  "purpose": "Bounded follow-up after all three fixed-CNN calibration candidates failed validation parity",
+  "mode": "RESEARCH MODE",
+  "architecture_role": "additional conventional M0 comparator; not replacement of locked M1 CNN architecture",
+  "features": "unchanged fifteen paired acoustic/EMG features",
+  "fitting": "original 26 training participants only; StandardScaler plus balanced LogisticRegression C=1 max_iter=1000 seed=2026",
+  "keras_mapping": "exact fitted coefficients and intercept in one Dense sigmoid head; no extra neural-network training",
+  "calibration": "all original training feature rows only; one fixed scheme, no sweep",
+  "validation": "original six validation participants only",
+  "acceptance": {"minimum_coverage": 0.95, "maximum_probability_error": 0.05, "minimum_threshold_agreement": 0.99, "maximum_f1_loss": 0.01, "maximum_model_bytes_exclusive": 100000},
+  "regression": "Only if validation criteria pass; original exposed six test participants, explicitly exploratory",
+  "model_selection": "No change to M01 validation-selected random forest reference",
+  "clinical_validation": false,
+  "hardware_deployment_approval": false
+}

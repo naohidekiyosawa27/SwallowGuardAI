@@ -18,3 +18,7 @@ The engineering foundation is prepared for feature branch feat/beta03-foundation
 ## Next review
 
 Review the draft PR and automated checks, reconcile missing specifications, resolve INT8 range/outlier behavior on independent validation data, and perform actual hardware/phantom metrology. Human approval remains required before merging or clinical work.
+
+## Stacked research continuation
+
+Milestone 02 is prepared on feat/m0-quantization-abstention. The owner merged PR #1 during this research session; observed main is d666940924bd3e2e568c35170f2739d1f07c0453, with the same foundation tree 606542ed5e549c61ac96763e0dae967ae7221077. The research branch is based on that main commit and its draft PR targets main. No research PR merge is authorized or automated. New source contains only aggregate results and synthetic fixtures, not raw waveforms or model binaries.

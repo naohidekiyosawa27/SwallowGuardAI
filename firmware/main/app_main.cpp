@@ -4,6 +4,7 @@
 #include "esp_log.h"
 #include "esp_timer.h"
 #include "simulated_hal.hpp"
+#include "quantization_guard.hpp"
 #include <atomic>
 #include <cstdlib>
 

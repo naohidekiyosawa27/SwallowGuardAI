@@ -1,0 +1,21 @@
+{
+  "scope": "validation only; numerical control, not model selection",
+  "float_model_sha256": "886bb6ef236a694356e7fe51dd7dce826a7038a5be5d92bb56df258e368f77ce",
+  "comparisons": {
+    "float32": {
+      "max_probability_error": 5.960464477539062e-07,
+      "p99_error": 2.980232238769531e-07,
+      "threshold_agreement": 1.0
+    },
+    "original_int8_default": {
+      "max_probability_error": 0.9388083815574646,
+      "p99_error": 0.7290859133005142,
+      "threshold_agreement": 0.9485049833887044
+    },
+    "original_int8_reference": {
+      "max_probability_error": 0.9388083815574646,
+      "p99_error": 0.7290859133005142,
+      "threshold_agreement": 0.9485049833887044
+    }
+  }
+}

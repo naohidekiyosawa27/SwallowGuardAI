@@ -17,3 +17,5 @@ Primary file actually supplied: `SWALLOWGUARD_AI_Technical_Design_Brief(1).pdf`,
 | Feature branches and draft PR | GITHUB_HANDOFF.md | Private repository and permissions verified; feature-branch handoff |
 
 Locked architecture is retained. D4 v2 is an M0 data candidate, never a surrogate for the five-sensor prototype. D3 was downgraded from an apparently open shortlist item to restricted/internal access after reading its API rights. The user explicitly approved the 1,506,737,987-byte D4 processed-clips download during this session. This does not approve other large datasets, paid compute, merges or clinical work.
+
+Milestone 02 preserves the locked M1 architecture. Additional Dense/sigmoid exports are conventional M0 numerical comparators only; none passed the preregistered engineering tolerances, and none changes the deployed/reference model. Both predeclared and follow-up protocols and all negative trials are retained.

@@ -1,5 +1,7 @@
 # SWALLOWGUARD AI Beta-03 — executed milestone
 
+Historical initial pilot report. Subsequent simulator build passed in GitHub CI; see [Milestone 02](MILESTONE_02.md) for current numerical validation results and remaining gates.
+
 25 November 2026. **RESEARCH MODE only.** This package contains working source, real public-data M0 pilot results and explicitly gated firmware/TinyML candidates. No clinical claim or successful target build is made.
 
 ## What actually ran

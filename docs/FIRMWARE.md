@@ -30,3 +30,9 @@ The GitHub workflow proposes Espressif IDF v5.3.2 for the simulator. Its actual 
 Espressif component `espressif/esp-tflite-micro` 1.3.1 was located in the official registry and documents ESP-NN integration. It is a candidate verified-to-exist version, not a tested dependency of this simulator. Add/pin it only with a reviewed model integration branch and retain the resolved dependency lock. No generated placeholder model is embedded merely to claim inference works.
 
 Long sensor cabling, electrical isolation, optical containment, watchdog scheduling and log-pressure behavior remain bench review items. All embedded thresholds are assumptions until measured.
+
+## Verified base build and new numerical guard
+
+The base simulator at a511265d7a82f81140a81c79cc906b741dc06514 built successfully for ESP32-S3 in IDF v5.3.2: https://github.com/naohidekiyosawa27/SwallowGuardAI/actions/runs/45459733898 . This resolves the earlier simulator compilation blocker only.
+
+Milestone 02 adds quantization_guard.hpp to the simulator compilation and host tests. It rejects invalid scale/zero point, nonfinite/out-of-range input and missing independent model acceptance. Python/C++ decisions are checked on 75 synthetic float32 boundary/random cases. Passing this input guard does not guarantee internal activation parity. All current numerical candidates failed validation; no actual model is enabled. Target checks for the new branch are reported by its PR CI.
