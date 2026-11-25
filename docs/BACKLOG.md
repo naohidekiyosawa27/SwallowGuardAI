@@ -37,3 +37,7 @@ Next: predeclare a bounded/QAT or validated-normalization study using training/v
 M03 numerical acceptance now passes for the bounded waveform QAT candidate (5,800 bytes; validation coverage 100%, F1 0.93906, max error 0.03995, agreement 99.668%). All four R3 trials are retained; waveform PTQ fails. The M01 reference and M1 architecture are unchanged. See `reports/MILESTONE_03.md`.
 
 F03 now has a guarded TFLM/ESP-NN component and CI compilation check. Default firmware loads no model. Physical invocation, golden-vector parity, memory, latency and power measurements remain open. Obtain new independent confirmation data before making generalization claims. All earlier M02 failures remain valid historical results.
+
+## Electrical Rev-A follow-up
+
+Implemented proposed portable wire ICD, Python/C++ parser/session/model-contract checks and synthetic memory experiment; primary evidence review is docs/REVA_VENDOR_REVIEW.md. F02 remains open for physical ADC/DMA/UART drivers and calibration. F03 remains open for real-device invocation/arena/latency despite simulator compilation. Hardware release is blocked by PixArt I/O rail compatibility, AFE headroom/transfer, exact STM32 package/pins, power/optical review and ERC/DRC. Current M0 cannot consume Rev-A's PVDF+one-EMG schema. Preserve M1/M2 gates and human fabrication/merge approval. All T01-T14 physical acceptance entries remain pending.

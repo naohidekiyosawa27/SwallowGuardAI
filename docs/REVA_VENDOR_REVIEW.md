@@ -14,7 +14,7 @@
 | BMI270 | Bosch BST-BMI270-DS000-08 rev1.6, March2026, https://www.bosch-sensortec.com/media/boschsensortec/downloads/datasheets/bst-bmi270-ds000.pdf | Manufacturer source located/opened. Pin/rail/init configuration, firmware API revision and axis calibration must be verified before live acquisition. No register sequence is invented. |
 | SDP31 | Manufacturer product page, https://sensirion.com/products/catalog/SDP31 | +/-500 Pa differential-pressure part. Exact digital-datasheet command/CRC/scale handling not implemented in this milestone. Pressure remains pressure, not calibrated airflow. Pneumatic delay/condensation tests remain open. |
 | PixArt PAA5163E1-QV22 | Manufacturer-authored document hosted by CODICO, v0.8, 21Jun2024, https://www.codico.com/en/mpattachment/file/download/id/1398/ | Distributor-hosted reference, not an independent clinical source. Exact init map, logic-level paths, optics, containment and footprint remain release gates. No copyrighted document redistribution or guessed register writes. |
-| LDT0-028K / OPA320 / OPA2320 / BQ24074 / regulators | Candidates transcribed from uploaded draft; exact applicable datasheet/suffix and complete circuit not verified here | Do not describe AFE or power design as approved. Measure PVDF capacitance/response, derive gain/stability/anti-aliasing and calculate worst-case current, cable drop, sequencing/back-power and protection before choosing values/MPNs. |
+| AFE/power component implementation | Candidate parts transcribed; follow-up manufacturer references below; exact suffixes/complete circuit/regulators still unresolved | Do not describe AFE or power design as approved. Measure PVDF capacitance/response, derive gain/stability/anti-aliasing and calculate worst-case current, cable drop, sequencing/back-power and protection before choosing values/MPNs. |
 
 ## Blocking findings
 
@@ -29,3 +29,16 @@ The AI evidence review remains docs/AI_RESEARCH_R3.md. No new journal performanc
 ## Next disconnected bench acceptance
 
 Use the uploaded T01-T14 table as traceability, not pass results. In order: exact BOM/schematic/rail review; current-limited unconnected power bring-up; digital evaluation-board capture; signal-generator/phantom AFE sweep; measured ADC DRDY/clock/group delay; cable fault and sustained-load tests; logging under concurrent UI/inference; then independent safety review. Human-connected work remains forbidden. Close numerical acceptance criteria with the responsible electrical engineer before collecting real bench evidence.
+
+## Follow-up component and filter findings
+
+- PixArt v0.8 p9 absolute-maximum table lists I/O upper voltage as VDDIO, not VDDIO+0.3V. With the draft's3.0-V I/O rail, directly applying a3.3-V host output is outside that listed limit. Resolve the rail/translation/sequence design before connecting SPI/reset/IRQ; no automatic power-rail change is made. Core VDD remains a separate1.8-2.1V domain. The manufacturer's table was visually checked.
+- TI Table8-2 supports8kSPS with HR mode,8.192-MHz master clock and OSR512. Under the regular steady-state sinc3 model, calculated gain at3kHz is0.4823 (-6.334dB), and digital-filter group delay is187.134us. This excludes analog filters, mechanics, extra phase calibration/global chop and reset fast-settling. It is NOT a measured response or the complete system delay. Do not select a new sample rate or equalizer automatically; define fidelity requirements and characterize the actual chain. Formula and assumptions are in reports/REVA_ADC_RESPONSE_ANALYTICAL.json.
+- TI OPAx320 SBOS513F RevF (Dec2016), https://www.ti.com/lit/ds/symlink/opa320.pdf : single/dual low-bias RRIO candidates operating at1.8-5.5V. Exact suffix, charge-amplifier stability, input protection, bias and ADC drive still require a complete circuit.
+- TI BQ2407x SLUS810N RevN, https://www.ti.com/lit/ds/symlink/bq24074.pdf : BQ24074 is a linear PowerPath charger supporting up to1.5A, not a boost regulator or a patient-isolation design. Do not assume SYSOFF functionality listed for other family variants. Set input/charge limits and evaluate dissipation, pack/NTC protection and interlock separately.
+- TE manufacturer description https://www.te.com/en/product-CAT-PFS0006.html and linked LDT with Crimps datasheet RevA5 (June2025) were inspected. Its fixture examples include a resonance near180Hz without added mass and about7V open-circuit equivalent at2mm deflection; these are not our measurements. Its480pF typical electrical-loading example gives an ideal high-pass corner near332Hz at1Mohm. Exact delivered part/capacitance and in-assembly response remain unmeasured. AFE protection, impedance and saturation recovery cannot be selected from an assumed flat microphone response. Illustrative calculations, not component selections, are in reports/REVA_PVDF_LOADING_ANALYTICAL.json.
+
+For the digital-filter calculation, with R=512, fMOD=4.096MHz and fDATA=8kHz:
+H(f)=[sin(pi*f/fDATA)/(R*sin(pi*f/fMOD))]^3;
+group delay=3*(R-1)/(2*fMOD).
+These are conditional discrete-filter arithmetic, not a new physiological or clinical claim.

@@ -23,9 +23,21 @@ Main issue: current M0-R3 input is sound + upper/lower EMG (three channels, 2kHz
 
 ## Execution and verification status
 
-Before interruption, sixteen targeted Python checks and portable C++ tests passed locally. The subsequent full-suite local result was not recovered and is not claimed. The execution environment later became unavailable. Source was reconstructed from the recorded changes and published via the connected GitHub interface; final source must be judged by the draft PR's actual CI results.
+The current source at commit b7963c0877d9e01db618d3a61c7d3cdec84ad469 passed both jobs in [GitHub Actions run45563812898](https://github.com/naohidekiyosawa27/SwallowGuardAI/actions/runs/45563812898):
 
-The CI workflow runs the complete core suite, portable C++ sanitizer checks and a60-s simulated-time memory transport experiment, retaining its aggregate JSON artifact. It also compiles the new headers into the ESP32-S3 simulator with the retained IDF/TFLM/ESP-NN dependency lock. Until the new run completes, its outcome remains pending. Synthetic frame/sample counts are not physical device measurements.
+- 95 Python tests run: **92 passed, 3 optional dependency skips** (TensorFlow/model-optimization dependencies are not installed in this core job). Portable C++ checks passed with undefined-behavior sanitizer. Sixteen new targeted tests include cross-language encoding/decoding.
+- **60 seconds of simulated time**, deterministic in-memory experiment: 36,000 frames; 480,000 ADC pairs (960,000 scalar ADC samples), 12,000 optical and12,000 IMU sample sets;4,320,000 wire-format bytes. Corruption injection/resynchronization retained the validity block. See REVA_SYNTHETIC_LINK_RESULTS.json. Observed parser occupancy272bytes is sampled after feed chunks, not a measured peak memory/stack/RSS claim; declared frame capacity274bytes.
+- **ESP32-S3 simulator target compiled successfully** under IDF5.3.2, TFLM1.3.1 and ESP-NN1.5.0 using the retained dependency lock. ESP-NN compile flag verified. Image size275,024bytes, with no model loaded. Vendor deprecation/shadowing warnings remain.
+- No UART, sensor, STM32 or physical inference operation was executed. Target latency and arena remain null. A firmware image size is not model size or runtime RAM.
+- Earlier sixteen targeted local tests and C++ tests passed before interruption. The final full local process result was not recovered; the local environment later became unavailable. The actual published source is verified by CI, not an invented local run.
+
+Synthetic artifact14998109972 ZIP SHA25615a5f16f7e293e50b56b1cd253256da8358f5f41bcd4e3767662492b5bd5118a. Target build artifact15000062058 ZIP SHA256e6fbd27b992422c80fcece9780f10c02e75298b4f2e88f715ebf8dd8a8861171. Build evidence and log excerpts are retained in reports/.
+
+## Additional electrical findings
+
+PixArt v0.8 specifies I/O absolute maximum at VDDIO. The draft's3.0-V I/O proposal must be reconciled with a3.3-V host before wiring. ADS131M028kSPS alone does not prove a flat3-kHz passband: for the explicit HR/8.192MHz/OSR512 steady-state sinc3 assumptions, analytical gain at3kHz is about-6.334dB and filter delay187.134us. Analog/mechanical/other delays are excluded. TE LDT RevA5 fixture examples show mounting/loading sensitivity and potentially high open-circuit transients. Exact prototype response/protection is unmeasured.
+
+Conditional calculations are in REVA_ADC_RESPONSE_ANALYTICAL.json and REVA_PVDF_LOADING_ANALYTICAL.json. They are not bench results, component selections or an approved change to the8kSPS profile. Manufacturer sources and remaining release gates are in docs/REVA_VENDOR_REVIEW.md and hardware/validation/reva_release_gates.json.
 
 ## Reproduce
 
