@@ -3,7 +3,9 @@
 **RESEARCH MODE — event recognition and mechanical-phantom research only.**
 No clinical diagnosis, aspiration detection, swallowing-safety clearance, diet recommendation or autonomous treatment is available. M0/M1 outputs describe events, never patient risk.
 
-The latest research milestone passes the M0 numerical gate with a 5,800-byte full-INT8 bounded-QAT CNN. Validation F1 0.9391 is internal development evidence; independent confirmation and physical inference remain pending. See [Milestone 03](reports/MILESTONE_03.md), [recent AI evidence](docs/AI_RESEARCH_R3.md), [Milestone 02 saturation controls](reports/MILESTONE_02.md), [the initial pilot](reports/MILESTONE_01.md), [dataset inventory](docs/DATASETS.md), [architecture](docs/ARCHITECTURE.md), [backlog](docs/BACKLOG.md) and [safety gates](docs/SAFETY_AND_PHANTOM.md).
+Electrical follow-up: [Milestone 04](reports/MILESTONE_04.md) adds a proposed Rev-A acquisition/link contract and blocks the incompatible two-channel hardware input from the D4 three-channel model. Hardware execution remains pending. See [vendor/interface review](docs/REVA_VENDOR_REVIEW.md) and [wire ICD](docs/REVA_WIRE_CONTRACT.md).
+
+The M0 research milestone passes the M0 numerical gate with a 5,800-byte full-INT8 bounded-QAT CNN. Validation F1 0.9391 is internal development evidence; independent confirmation and physical inference remain pending. See [Milestone 03](reports/MILESTONE_03.md), [recent AI evidence](docs/AI_RESEARCH_R3.md), [Milestone 02 saturation controls](reports/MILESTONE_02.md), [the initial pilot](reports/MILESTONE_01.md), [dataset inventory](docs/DATASETS.md), [architecture](docs/ARCHITECTURE.md), [backlog](docs/BACKLOG.md) and [safety gates](docs/SAFETY_AND_PHANTOM.md).
 
 ## Quick start
 
