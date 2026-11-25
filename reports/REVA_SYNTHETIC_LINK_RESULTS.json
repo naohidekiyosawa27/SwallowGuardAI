@@ -1,0 +1,44 @@
+{
+  "origin": "synthetic_memory_experiment",
+  "simulated_seconds": 60,
+  "frames_decoded": 36000,
+  "wire_bytes": 4320000,
+  "sample_counts": {
+    "ADC_PAIR": 480000,
+    "OPTICAL": 12000,
+    "IMU": 12000
+  },
+  "parser_observed_high_water_bytes": 272,
+  "parser_declared_capacity_bytes": 274,
+  "healthy_complete_segment": true,
+  "corruption_resync_retains_block": true,
+  "reva_to_d4_model_mismatches": [
+    "channels",
+    "sample_hz",
+    "window_samples",
+    "domain",
+    "preprocessing_id"
+  ],
+  "physical_uart_executed": false,
+  "sensor_acquisition_executed": false,
+  "clinical_outputs_enabled": false,
+  "hardware_latency_ms": null,
+  "link_budget": {
+    "origin": "calculated_not_measured",
+    "uart_baud": 2000000,
+    "uart_bits_per_byte": 10,
+    "frame_bytes": {
+      "ADC_PAIR": 274,
+      "OPTICAL": 40,
+      "IMU": 46
+    },
+    "bytes_per_second": 72000,
+    "line_utilization": 0.36,
+    "adc_block_interval_us": 5000,
+    "largest_frame_bytes": 274,
+    "uart_payload_ring_100ms_bytes": 7200,
+    "adc_two_second_packed_counts_bytes": 96000,
+    "clock_sync_control_log_overhead_included": false,
+    "physical_link_verified": false
+  }
+}

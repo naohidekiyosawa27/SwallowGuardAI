@@ -1,0 +1,71 @@
+{
+  "revision": "RevA0-research-followup",
+  "date": "2026-11-25",
+  "scope": "engineering release blockers; not a clinical risk assessment",
+  "research_mode": true,
+  "gates": [
+    {
+      "id": "E01",
+      "status": "open_release_blocker",
+      "issue": "D4 three-channel model incompatible with Rev-A PVDF+one-EMG",
+      "evidence": "Python/C++ contract tests and synthetic check",
+      "exit": "New paired prototype dataset and matching model/preprocessing independently evaluated; no missing-channel filling"
+    },
+    {
+      "id": "E02",
+      "status": "open_release_blocker",
+      "issue": "PixArt VDDIO3.0V proposal versus3.3V host output",
+      "evidence": "Vendor v0.8 absolute I/O limit is VDDIO; no extra0.3V allowance shown",
+      "exit": "Reviewed I/O rail/translator choice, sequencing and powered-off/back-power analysis. No automatic rail change"
+    },
+    {
+      "id": "E03",
+      "status": "open_release_blocker",
+      "issue": "AFE differential/full-scale/common-mode undefined",
+      "evidence": "ADS131M02 nominal +/-1.2V/gain; MyoWare RAW biased nearVIN/2",
+      "exit": "Exact circuit/MPNs and bench gain, offset, common-mode, clipping, recovery and antialias results"
+    },
+    {
+      "id": "E04",
+      "status": "open_characterization",
+      "issue": "PVDF passband not established by8kSPS alone",
+      "evidence": "Conditional steady-state sinc3 model predicts about-6.334dB at3kHz; not measured",
+      "exit": "Define fidelity tolerance and measure complete AFE+ADC+mount response; retain8k contract until reviewed"
+    },
+    {
+      "id": "E05",
+      "status": "open_release_blocker",
+      "issue": "STM32 package, timers/SPI/DMA/pin mapping and ADC init not finalized",
+      "exit": "Exact suffix and reviewed schematic; actual target compile/capture/timing evidence"
+    },
+    {
+      "id": "E06",
+      "status": "open_characterization",
+      "issue": "Physical cable, power, SD/UI contention and synchronization unverified",
+      "exit": "Disconnected evaluation-board load/fault tests; no rate or latency inferred from memory replay"
+    },
+    {
+      "id": "E07",
+      "status": "open_release_blocker",
+      "issue": "Unreleased schematic/PCB/power/optical containment",
+      "exit": "Owner electrical/mechanical review, ERC/DRC, exact BOM and human fabrication approval"
+    },
+    {
+      "id": "E08",
+      "status": "closed_software_only",
+      "issue": "Proposed data codec lacks executable reference",
+      "evidence": "Portable source and tests added; CI outcome on PR",
+      "limitation": "No UART/register/STM32 operation or physical test pass implied"
+    },
+    {
+      "id": "E09",
+      "status": "open_characterization",
+      "issue": "PVDF mounting, input loading and large transient response",
+      "evidence": "TE RevA5 fixture examples are not our prototype transfer function",
+      "exit": "Confirm exact part and mount; measure C, complete transfer, protection/clipping/recovery before fixing AFE values"
+    }
+  ],
+  "source_T01_T14_physical_acceptance": "all_pending",
+  "clinical_outputs_enabled": false,
+  "human_connection_enabled": false
+}

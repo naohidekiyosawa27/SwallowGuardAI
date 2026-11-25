@@ -33,3 +33,7 @@ Optical preprocessing converts measured, calibrated counts to external displacem
 Four-second raw float32 channel values require approximately 187,200 bytes before timestamps/status and buffering. Proposed INT8 M1 inputs require 12,400 bytes plus 8 timing-feature bytes. Model weights are separate from tensor arena, stacks, queues, DMA and logging. N16R8 capacity is a board designation, not measured available inference memory. No tensor-arena or target RAM claim is made.
 
 Missing sensor data causes abstention. M1 branches cannot be filled with synthetic physiological signals. No M2 implementation exists.
+
+## Electrical Rev-A proposal
+
+The supplied draft proposes local STM32G0B1 + ADS131M02 acquisition and a differential UART link to the ESP32-S3. configs/electrical_reva.json records that proposal separately from the unchanged active simulated HAL. docs/REVA_WIRE_CONTRACT.md implements the portable software interface only; MCU package, pin/register/DMA assignment and physical synchronization remain pending. No live architecture or model is enabled. D4 M0-R3 input differs from the two-channel Rev-A AFE and is explicitly blocked; an actual prototype model requires matching synchronized measurements. See reports/MILESTONE_04.md and hardware/validation/reva_release_gates.json.

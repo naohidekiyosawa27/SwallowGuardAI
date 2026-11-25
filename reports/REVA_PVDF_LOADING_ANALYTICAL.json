@@ -1,0 +1,32 @@
+{
+  "origin": "analytical_RC_loading_example_not_prototype",
+  "source": "TE LDT with Crimps RevA5 June2025, Experiment3",
+  "source_url": "https://www.te.com/en/product-11028362-00.html",
+  "assumed_capacitance_pf": 480,
+  "capacitance_assumption": "manufacturer typical example, not measured on delivered sensor",
+  "formula": "fc=1/(2*pi*R*C); |H(f)|=f/sqrt(f^2+fc^2)",
+  "rows": [
+    {
+      "resistance_ohms": 1000000,
+      "corner_hz": 331.5727981081153,
+      "magnitude_at_50_hz": 0.14911062163765085,
+      "db_at_50_hz": -16.52982838455245
+    },
+    {
+      "resistance_ohms": 10000000,
+      "corner_hz": 33.157279810811524,
+      "magnitude_at_50_hz": 0.8334021839423877,
+      "db_at_50_hz": -1.582907316046497
+    },
+    {
+      "resistance_ohms": 100000000,
+      "corner_hz": 3.3157279810811535,
+      "magnitude_at_50_hz": 0.9978084152669378,
+      "db_at_50_hz": -0.0190567530042243
+    }
+  ],
+  "actual_sensor_mpn_confirmed": false,
+  "actual_mount_response_measured": false,
+  "afe_components_selected": false,
+  "decision": "Retain AFE as unresolved. These illustrative R values are not a released component recommendation or a substitute for charge-amplifier stability/protection characterization."
+}

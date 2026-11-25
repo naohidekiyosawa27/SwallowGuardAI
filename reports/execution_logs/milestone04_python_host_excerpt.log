@@ -1,0 +1,4 @@
+2026-11-25T06:52:45.7280321Z Ran 95 tests in 5.750s
+2026-11-25T06:52:45.7281002Z OK (skipped=3)
+2026-11-25T06:52:46.2675146Z PASS: ring overflow/order, simulated rates, transport faults, numerical range/model validation guards, disabled clinical output
+2026-11-25T06:52:46.7400608Z PASS: Rev-A framing/CRC/resync/bounds/session/rate/clock/contract guards (synthetic only)

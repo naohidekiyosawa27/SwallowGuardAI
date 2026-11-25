@@ -1,0 +1,48 @@
+{
+  "origin": "analytical_steady_state_filter_model_not_bench",
+  "source_url": "https://www.ti.com/lit/ds/symlink/ads131m02.pdf",
+  "source_sections": "8.3.7, Table8-2, steady-state sinc3 path",
+  "assumptions": {
+    "power_mode": "HR",
+    "master_clock_hz": 8192000,
+    "modulator_hz": 4096000,
+    "osr": 512,
+    "output_hz": 8000,
+    "filter_order": 3,
+    "global_chop": false,
+    "extra_phase_delay": false,
+    "analog_afe_included": false,
+    "post_reset_fast_settling_included": false
+  },
+  "formula": "[sin(pi*f/fDATA)/(OSR*sin(pi*f/fMOD))]^3",
+  "response": [
+    {
+      "frequency_hz": 50,
+      "magnitude": 0.9998072511255335,
+      "db": -0.0016743568218582014
+    },
+    {
+      "frequency_hz": 450,
+      "magnitude": 0.9844912698831514,
+      "db": -0.13576261354182542
+    },
+    {
+      "frequency_hz": 1000,
+      "magnitude": 0.9254212172115206,
+      "db": -0.6732109523037415
+    },
+    {
+      "frequency_hz": 2000,
+      "magnitude": 0.7297697770534973,
+      "db": -2.736282532518246
+    },
+    {
+      "frequency_hz": 3000,
+      "magnitude": 0.4822850127113092,
+      "db": -6.3339246764663475
+    }
+  ],
+  "group_delay_us": 187.1337890625,
+  "hardware_measured": false,
+  "decision": "Do not change the proposed8kSPS profile automatically. Characterize complete analog+ADC transfer and choose fidelity tolerance before schematic/config release."
+}

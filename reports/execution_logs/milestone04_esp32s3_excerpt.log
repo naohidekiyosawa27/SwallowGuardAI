@@ -1,0 +1,8 @@
+2026-11-25T07:01:01.2389551Z [36;1m    'esp_nn_compile_flag_found':'-DESP_NN' in commands,[0m
+2026-11-25T07:01:29.8982475Z Bootloader binary size 0x5490 bytes. 0x2b70 bytes (34%) free.
+2026-11-25T07:08:15.3672738Z /__w/SwallowGuardAI/SwallowGuardAI/firmware/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use 'is_standard_layout && is_trivial' instead [-Wdeprecated-declarations]
+2026-11-25T07:08:16.1513209Z [1263/1269] Building CXX object esp-idf/main/CMakeFiles/__idf_main.dir/app_main.cpp.obj
+2026-11-25T07:08:16.1523952Z /__w/SwallowGuardAI/SwallowGuardAI/firmware/managed_components/espressif__esp-tflite-micro/tensorflow/lite/core/api/flatbuffer_conversions.h:46:24: warning: 'template<class _Tp> struct std::is_pod' is deprecated: use 'is_standard_layout && is_trivial' instead [-Wdeprecated-declarations]
+2026-11-25T07:08:20.2091695Z swallowguard_research.bin binary size 0x43250 bytes. Smallest app partition is 0x100000 bytes. 0xbcdb0 bytes (74%) free.
+2026-11-25T07:08:20.2101638Z Project build complete. To flash, run:
+2026-11-25T07:08:20.3293202Z   "esp_nn_compile_flag_found": true,

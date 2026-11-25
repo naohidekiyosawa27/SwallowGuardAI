@@ -15,6 +15,12 @@ jobs:
           python-version: "3.11"
       - run: pip install -e .
       - run: bash scripts/verify.sh
+      - name: Run synthetic Rev-A link experiment
+        run: python -m swallowguard.transport.simulate_reva build/reva_link_results.json --seconds 60
+      - uses: actions/upload-artifact@v4
+        with:
+          name: reva-synthetic-link-evidence
+          path: build/reva_link_results.json
   esp-idf-simulator:
     runs-on: ubuntu-24.04
     container: espressif/idf:v5.3.2
@@ -25,6 +31,7 @@ jobs:
         shell: bash
         run: |
           . /opt/esp/idf/export.sh
+          cp reports/firmware_dependencies_R3.lock firmware/dependencies.lock
           cd firmware
           idf.py set-target esp32s3
           idf.py build

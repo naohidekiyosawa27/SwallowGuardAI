@@ -1,0 +1,104 @@
+{
+  "revision": "Rev A.0 / Beta-03",
+  "status": "proposed_software_contract_not_released_hardware",
+  "source_document": {
+    "file": "SWALLOWGUARD_Electrical_RevA(2).pdf",
+    "pages": 16,
+    "sha256": "45a2e94a87d0b4b05f635d5b07ea7f46ae580a88c63afa567244bce0a3f81d43"
+  },
+  "research_mode": true,
+  "human_connection_enabled": false,
+  "live_drivers_enabled": false,
+  "pcb_fabrication_approved": false,
+  "main_mcu": "ESP32-S3-WROOM-1-N16R8",
+  "acquisition_mcu": {
+    "family": "STM32G0B1",
+    "package": null,
+    "pinout_verified": false,
+    "role": "ADC/sensor acquisition only; no CNN"
+  },
+  "analog": {
+    "adc": "ADS131M02",
+    "raw_hz": 8000,
+    "channels": [
+      "PVDF conditioned",
+      "MyoWare 2.0 RAW conditioned"
+    ],
+    "resolution_bits_nominal": 24,
+    "calibration_id": null,
+    "full_scale_verified_on_board": false
+  },
+  "head": {
+    "optical": "PAA5163E1-QV22",
+    "pvdf": "LDT0-028K",
+    "semg": "MyoWare 2.0",
+    "imu": "BMI270",
+    "optical_hz_target": 200,
+    "imu_hz_target": 200
+  },
+  "controller": {
+    "respiratory": "SDP31",
+    "respiratory_hz_target": 100,
+    "pressure_is_flow": false,
+    "display_controller": null,
+    "display_hardware_verified": false,
+    "microSD_hardware_verified": false
+  },
+  "link": {
+    "candidate": "MAX3490",
+    "duplex": "full",
+    "uart_baud_target": 2000000,
+    "uart_format": "8N1",
+    "length_m_target": 1,
+    "protocol": "docs/REVA_WIRE_CONTRACT.md",
+    "electrical_isolation": false,
+    "physical_verified": false
+  },
+  "proposed_main_gpio": {
+    "head_tx": 17,
+    "head_rx": 18,
+    "sdp_sda": 8,
+    "sdp_scl": 9,
+    "tft_cs": 10,
+    "tft_mosi": 11,
+    "tft_sclk": 12,
+    "tft_miso": 13,
+    "tft_dc": 14,
+    "tft_reset": 15,
+    "tft_backlight": 7,
+    "sd_sclk": 39,
+    "sd_mosi": 40,
+    "sd_miso": 41,
+    "sd_cs": 42,
+    "start": 4,
+    "stop": 5,
+    "battery_adc": 6,
+    "head_power_enable": 21,
+    "charger_status": 47,
+    "status_led": 48
+  },
+  "gpio_status": "transcribed proposal; not compiled GPIO initialization; module pins are not GPIO numbers",
+  "reserved_r8_gpio": [
+    35,
+    36,
+    37
+  ],
+  "native_usb_gpio": [
+    19,
+    20
+  ],
+  "uart0_debug_gpio": [
+    43,
+    44
+  ],
+  "strapping_gpio": [
+    0,
+    3,
+    45,
+    46
+  ],
+  "model_compatibility": {
+    "current_D4_M0_R3_with_RevA_raw": false,
+    "reason": "PVDF + one sEMG is not throat sound + upper/lower sEMG; preprocessing/domain/rates also differ"
+  }
+}

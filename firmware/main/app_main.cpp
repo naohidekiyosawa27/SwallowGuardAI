@@ -6,6 +6,8 @@
 #include "simulated_hal.hpp"
 #include "quantization_guard.hpp"
 #include "sg_tflm_runner.hpp"
+#include "reva_link.hpp"
+#include "model_input_contract.hpp"
 #include <atomic>
 #include <cstdlib>
 
@@ -63,6 +65,10 @@ extern "C" void app_main() {
 #if !CONFIG_SWALLOWGUARD_SIMULATED
 #error "Live drivers are blocked pending datasheet, schematic and safety review"
 #endif
+    // Synthetic memory loopback only; no physical UART or sensor access.
+    if(!sg::reva::synthetic_contract_selfcheck() ||
+       sg::model_input_matches(sg::reva_raw_contract(),sg::d4_r3_contract()))std::abort();
+    ESP_LOGI(TAG,"RESEARCH MODE | Rev-A synthetic wire check | M0 input incompatible; model blocked");
     // Link the audited five-operator TFLM/ESP-NN path. No model/arena is loaded;
     // real-device parity/latency tests require a reviewed bench setup.
     static sg::ResearchTFLMRunner bench_inference;

@@ -21,3 +21,5 @@ Locked architecture is retained. D4 v2 is an M0 data candidate, never a surrogat
 Milestone 02 preserves the locked M1 architecture. Additional Dense/sigmoid exports are conventional M0 numerical comparators only; none passed the preregistered engineering tolerances, and none changes the deployed/reference model. Both predeclared and follow-up protocols and all negative trials are retained.
 
 Milestone 03 adds a numerically accepted M0 bounded-QAT candidate and guarded TFLM/ESP-NN compile integration. Physical inference, model identity verification by caller, memory/latency measurements and independent confirmation remain required. No locked M1 architectural change or clinical promotion is made.
+
+Milestone 04 additionally reconciles the supplied 16-page Electrical Rev A.0 reference (SHA256 45a2e94a87d0b4b05f635d5b07ea7f46ae580a88c63afa567244bce0a3f81d43). It is draft hardware, not ERC/DRC/released pinout. Proposed STM32/ADS131M02 acquisition has a portable synthetic codec/ICD; live drivers remain disabled. Rev-A PVDF+one-EMG cannot feed the D4 sound+two-EMG model. Exact Work/GitHub PDF/MD reconciliation remains open.
